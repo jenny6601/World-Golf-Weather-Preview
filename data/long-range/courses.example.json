@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0.0",
+  "description": "球場資料輸入範本。請以 World Golf Weather 已核實的球場座標建立清單；不在此範本內虛構球場。",
+  "courses": []
+}
