@@ -140,7 +140,7 @@ def main() -> int:
                 stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
                 safe_id = re.sub(r"[^A-Za-z0-9_-]", "_", course["course_id"])
                 filename = f"{safe_id}_{model}_{stamp}.json"
-                (outdir / filename).write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+                (outdir / filename).write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 manifest["records"].append({
                     "course_id": course["course_id"], "model": model, "file": filename,
                     "retrieved_at": record["retrieved_at"], "valid_time_count": record["valid_time_count"],
@@ -155,7 +155,7 @@ def main() -> int:
         manifest["status"] = "no_targets_configured"
         manifest["notes"].append("球場清單為空，本次不呼叫 API。")
     manifest["run_finished_at"] = utc_now()
-    (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: manifest[k] for k in ("status", "course_count", "records", "errors")}, ensure_ascii=False, indent=2))
     return 1 if manifest["status"] in ("failed", "partial") else 0
 
