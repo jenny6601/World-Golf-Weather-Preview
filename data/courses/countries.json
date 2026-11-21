@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "description": "Country registry for the World Golf Weather course selector. Add a country here before importing its course records.",
+  "countries": [
+    {
+      "code": "JP",
+      "name": "日本",
+      "name_en": "Japan"
+    },
+    {
+      "code": "KR",
+      "name": "南韓",
+      "name_en": "South Korea"
+    },
+    {
+      "code": "CN",
+      "name": "中國",
+      "name_en": "China"
+    },
+    {
+      "code": "VN",
+      "name": "越南",
+      "name_en": "Vietnam"
+    },
+    {
+      "code": "TH",
+      "name": "泰國",
+      "name_en": "Thailand"
+    },
+    {
+      "code": "MY",
+      "name": "馬來西亞",
+      "name_en": "Malaysia"
+    },
+    {
+      "code": "SG",
+      "name": "新加坡",
+      "name_en": "Singapore"
+    },
+    {
+      "code": "ID",
+      "name": "印尼",
+      "name_en": "Indonesia"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Golf Weather Course",
+  "type": "object",
+  "required": [
+    "course_id",
+    "name_en",
+    "country_code",
+    "verification_status"
+  ],
+  "properties": {
+    "course_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]+$"
+    },
+    "name_en": {
+      "type": "string",
+      "minLength": 2
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "search_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "country": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "region": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "official_address": {
+      "type": "string"
+    },
+    "local_address": {
+      "type": "string"
+    },
+    "map_address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "official_website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "photo_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "photo_source": {
+      "type": "string"
+    },
+    "data_source": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_status": {
+      "enum": [
+        "verified",
+        "partially_verified",
+        "unverified"
+      ]
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "holes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "course_type": {
+      "type": "string"
+    },
+    "local_name": {
+      "type": "string"
+    },
+    "coordinate_source": {
+      "type": "string",
+      "format": "uri"
+    },
+    "verification_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,1838 @@
+{
+  "version": 1,
+  "scope": "Asia",
+  "countries": [
+    "JP",
+    "KR",
+    "CN",
+    "VN",
+    "TH",
+    "MY",
+    "SG",
+    "ID"
+  ],
+  "generated_at": "2026-11-20T11:54:00.900Z",
+  "record_count": 56,
+  "notes": "資料品質盤點（2026-11-20）：共56筆、8國；verified 7筆、partially_verified 49筆、unverified 0筆。56筆目前均有經緯度及 IANA 時區，網站會依座標載入預報；partially_verified 表示球場位置／座標來源仍待進一步核實，不等同官方 GPS 核實。部分紀錄尚缺官方地址、官方網站或座標來源欄位，請以各筆資料實際欄位為準。",
+  "courses": [
+    {
+      "course_id": "jp-abiko",
+      "name_en": "Abiko Golf Club",
+      "short_name": "Abiko Golf Club",
+      "aliases": [
+        "Abiko GC",
+        "我孫子ゴルフ倶楽部",
+        "Abiko Golf Course"
+      ],
+      "search_keywords": [
+        "Abiko",
+        "Chiba",
+        "Japan",
+        "我孫子",
+        "岡発戸",
+        "270-1137"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Abiko",
+      "region": "Chiba",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.abikogc.com/english/access/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12932.977831795837!2d140.04306791528322!3d35.867525722534616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x9c535c870e173433!2z5oiR5a2r5a2Q44K044Or44OV5YC25qW96YOo!5e0!3m2!1sja!2sjp!4v1638514604211!5m2!1sja!2sjp"
+      ],
+      "local_name": "我孫子ゴルフ倶楽部",
+      "official_address": "〒270-1137 千葉県我孫子市岡発戸1110",
+      "local_address": "〒270-1137 千葉県我孫子市岡発戸1110",
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.abikogc.com/english/access/",
+      "latitude": 35.867525722534616,
+      "longitude": 140.04306791528322,
+      "map_address": "〒270-1137 千葉県我孫子市岡発戸1110",
+      "coordinate_source": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12932.977831795837!2d140.04306791528322!3d35.867525722534616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x9c535c870e173433!2z5oiR5a2r5a2Q44K044Or44OV5YC25qW96YOo!5e0!3m2!1sja!2sjp!4v1638514604211!5m2!1sja!2sjp",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "GPS coordinates taken from the Google Maps iframe embedded on the official club access page."
+    },
+    {
+      "course_id": "jp-camellia-hills",
+      "name_en": "Camellia Hills Country Club",
+      "short_name": "Camellia Hills Country Club",
+      "aliases": [
+        "Camellia Hills CC",
+        "カメリアヒルズカントリークラブ",
+        "Camellia Hills"
+      ],
+      "search_keywords": [
+        "Sodegaura",
+        "Chiba",
+        "Japan",
+        "袖ケ浦",
+        "大竹",
+        "299-0221"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Sodegaura",
+      "region": "Chiba",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.camelliahills.com/outline/"
+      ],
+      "local_name": "カメリアヒルズカントリークラブ",
+      "official_address": "〒299-0221 千葉県袖ケ浦市大竹265",
+      "local_address": "〒299-0221 千葉県袖ケ浦市大竹265",
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.camelliahills.com/outline/",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "官方名稱與地址已核實；GPS 參考 FullGolf 球場頁座標，仍待官方球場地圖交叉確認。",
+      "latitude": 35.360042,
+      "longitude": 140.024104,
+      "coordinate_source": "https://www.fullgolf.com/en/golf-club/japan/chiba/sodegaura/camellia-hills-country-club"
+    },
+    {
+      "course_id": "jp-sodegaura",
+      "name_en": "Sodegaura Country Club – Sodegaura Course",
+      "short_name": "Sodegaura Country Club – Sodegaura Course",
+      "aliases": [
+        "Sodegaura CC",
+        "袖ヶ浦カンツリークラブ 袖ヶ浦コース",
+        "Sodegaura Course",
+        "袖ヶ浦コース"
+      ],
+      "search_keywords": [
+        "Chiba",
+        "Japan",
+        "千葉市緑区",
+        "辺田町",
+        "266-0007"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Chiba",
+      "region": "Chiba",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.sodegaura.co.jp/access/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25966.08668567278!2d140.16336342587883!3d35.559608423968655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602290a9bc23b9c9:0x8c2f48ce212192ff!2z6KKW44O25rWm44Kr44Oz44OE44Oq44O844Kv44Op44OW6KKW44O25rWm44Kz44O844K5!5e0!3m2!1sja!2sjp!4v1584337120216!5m2!1sja!2sjp"
+      ],
+      "local_name": "袖ヶ浦カンツリークラブ 袖ヶ浦コース",
+      "official_address": "〒266-0007 千葉県千葉市緑区辺田町567番地",
+      "local_address": "〒266-0007 千葉県千葉市緑区辺田町567番地",
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.sodegaura.co.jp/access/",
+      "latitude": 35.559608423968655,
+      "longitude": 140.16336342587883,
+      "map_address": "〒266-0007 千葉県千葉市緑区辺田町567番地",
+      "coordinate_source": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25966.08668567278!2d140.16336342587883!3d35.559608423968655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602290a9bc23b9c9:0x8c2f48ce212192ff!2z6KKW44O25rWm44Kr44Oz44OE44Oq44O844Kv44Op44OW6KKW44O25rWm44Kz44O844K5!5e0!3m2!1sja!2sjp!4v1584337120216!5m2!1sja!2sjp",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "GPS coordinates taken from the Google Maps iframe embedded on the official club access page."
+    },
+    {
+      "course_id": "jp-kasumigaseki",
+      "name_en": "Kasumigaseki Country Club",
+      "short_name": "Kasumigaseki Country Club",
+      "aliases": [
+        "Kasumigaseki CC",
+        "霞ヶ関カンツリー倶楽部",
+        "Kasumi"
+      ],
+      "search_keywords": [
+        "Kawagoe",
+        "Saitama",
+        "Japan",
+        "川越市",
+        "笠幡",
+        "350-1175"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Kawagoe",
+      "region": "Saitama",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.kasumigasekicc.or.jp/english/access/index.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12927.42010142687!2d139.3957515608896!3d35.901566179416555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d82b61d4fb8b:0x23f567cae9e19846!2z44CSMzUwLTExNzUg5Z-8546J55yM5bed6LaK5biC56yg5bmh77yT77yT77yZ77yY!5e0!3m2!1sja!2sjp!4v1540357932835"
+      ],
+      "local_name": "霞ヶ関カンツリー倶楽部",
+      "official_address": "〒350-1175 埼玉県川越市大字笠幡3398",
+      "local_address": "〒350-1175 埼玉県川越市大字笠幡3398",
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.kasumigasekicc.or.jp/english/access/index.html",
+      "latitude": 35.901566179416555,
+      "longitude": 139.3957515608896,
+      "map_address": "〒350-1175 埼玉県川越市大字笠幡3398",
+      "coordinate_source": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12927.42010142687!2d139.3957515608896!3d35.901566179416555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d82b61d4fb8b:0x23f567cae9e19846!2z44CSMzUwLTExNzUg5Z-8546J55yM5bed6LaK5biC56yg5bmh77yT77yT77yZ77yY!5e0!3m2!1sja!2sjp!4v1540357932835",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "GPS coordinates taken from the Google Maps iframe embedded on the official club access page."
+    },
+    {
+      "course_id": "jp-tokyo-golf-club",
+      "name_en": "Tokyo Golf Club",
+      "short_name": "Tokyo Golf Club",
+      "aliases": [
+        "東京ゴルフ倶楽部",
+        "Tokyo GC",
+        "東京GC"
+      ],
+      "search_keywords": [
+        "Sayama",
+        "Saitama",
+        "Japan",
+        "狭山市",
+        "柏原",
+        "350-1335"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Sayama",
+      "region": "Saitama",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.tokyogolfclub.jp/english/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.077248998372!2d139.4043753152647!3d35.89612368014474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d9cd243c34ed:0x94a44bee57926ad9!2sTokyo+Golf+Club!5e0!3m2!1sen!2sjp!4v1602670080541"
+      ],
+      "local_name": "東京ゴルフ倶楽部",
+      "official_address": "〒350-1335 埼玉県狭山市柏原1984",
+      "local_address": "〒350-1335 埼玉県狭山市柏原1984",
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.tokyogolfclub.jp/english/access/",
+      "latitude": 35.89612368014474,
+      "longitude": 139.4043753152647,
+      "map_address": "〒350-1335 埼玉県狭山市柏原1984",
+      "coordinate_source": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.077248998372!2d139.4043753152647!3d35.89612368014474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d9cd243c34ed:0x94a44bee57926ad9!2sTokyo+Golf+Club!5e0!3m2!1sen!2sjp!4v1602670080541",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "GPS coordinates taken from the Google Maps iframe embedded on the official club access page."
+    },
+    {
+      "course_id": "kr-nine-bridges",
+      "name_en": "The Club at Nine Bridges",
+      "short_name": "Nine Bridges",
+      "aliases": [
+        "Nine Bridges",
+        "Club Nine Bridges",
+        "나인브릿지"
+      ],
+      "search_keywords": [
+        "Jeju",
+        "South Korea"
+      ],
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Seogwipo",
+      "region": "Jeju",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.ninebridges.co.kr/eng/introduction/location.asp",
+        "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020301"
+      ],
+      "local_name": "클럽나인브릿지",
+      "official_address": "제주특별자치도 서귀포시 안덕면 광평로 34-156",
+      "local_address": "제주특별자치도 서귀포시 안덕면 광평로 34-156",
+      "latitude": 33.3420536,
+      "longitude": 126.4046382,
+      "timezone": "Asia/Seoul",
+      "official_website": "https://www.ninebridges.co.kr/index.asp",
+      "coordinate_source": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020301",
+      "verification_note": "球場官方網站確認名稱及地址；濟州官方觀光入口提供地址及 GPS 座標。",
+      "verified_at": "2026-11-20T00:00:00+09:00"
+    },
+    {
+      "course_id": "kr-blackstone-jeju",
+      "name_en": "Black Stone Golf & Resort Jeju",
+      "short_name": "Black Stone Jeju",
+      "aliases": [
+        "Blackstone Jeju",
+        "Black Stone Jeju",
+        "블랙스톤 제주"
+      ],
+      "search_keywords": [
+        "Jeju",
+        "South Korea"
+      ],
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Jeju-si",
+      "region": "Jeju",
+      "verification_status": "verified",
+      "data_source": [
+        "https://www.blackstoneresort.com/jj/aboutList",
+        "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500761"
+      ],
+      "local_name": "블랙스톤 골프앤리조트 제주",
+      "official_address": "제주특별자치도 제주시 한림읍 한창로 925-122",
+      "local_address": "제주특별자치도 제주시 한림읍 한창로 925-122",
+      "latitude": 33.33866,
+      "longitude": 126.31243,
+      "official_website": "https://www.blackstoneresort.com/jj/",
+      "coordinate_source": "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500761",
+      "verification_note": "球場官方網站確認正式名稱與地址；濟州官方觀光入口提供相同地址及 GPS 座標。",
+      "timezone": "Asia/Seoul",
+      "verified_at": "2026-11-20T00:00:00+09:00"
+    },
+    {
+      "course_id": "kr-teddy-valley",
+      "name_en": "Teddy Valley Golf & Resort",
+      "short_name": "Teddy Valley",
+      "aliases": [
+        "Teddy Valley",
+        "Teddy Valley Golf Resort",
+        "테디밸리"
+      ],
+      "search_keywords": [
+        "Jeju",
+        "South Korea"
+      ],
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Seogwipo",
+      "region": "Jeju",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "http://www.teddyvalley.com/",
+        "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000018152"
+      ],
+      "local_name": "테디밸리 골프앤리조트",
+      "official_address": "제주특별자치도 서귀포시 안덕면 한창로 365",
+      "local_address": "제주특별자치도 서귀포시 안덕면 한창로 365",
+      "official_website": "http://www.teddyvalley.com/",
+      "verification_note": "Jeju official tourism source confirms club identity/address; OpenStreetMap-derived Mapcarta golf-course feature supplies mapped golf-course coordinates. Kept partially verified pending official club map cross-check.",
+      "timezone": "Asia/Seoul",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "latitude": 33.28964,
+      "longitude": 126.34324,
+      "coordinate_source": "https://mapcarta.com/W369786684"
+    },
+    {
+      "course_id": "kr-asiad",
+      "name_en": "Asiad Country Club",
+      "short_name": "Asiad CC",
+      "aliases": [
+        "Asiad CC",
+        "아시아드CC",
+        "아시아드C.C."
+      ],
+      "search_keywords": [
+        "Busan",
+        "South Korea"
+      ],
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Gijang-gun",
+      "region": "Busan",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.asiadcc.co.kr/"
+      ],
+      "local_name": "아시아드 컨트리클럽",
+      "official_address": "부산광역시 기장군 일광면 차양길 26",
+      "local_address": "부산광역시 기장군 일광면 차양길 26",
+      "official_website": "https://www.asiadcc.co.kr/",
+      "verification_note": "Official club source confirms identity/address; OpenStreetMap-derived Mapcarta leisure=golf_course feature supplies golf-course coordinates. Kept partially verified pending official club map cross-check.",
+      "timezone": "Asia/Seoul",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "latitude": 35.28428,
+      "longitude": 129.24278,
+      "coordinate_source": "https://mapcarta.com/34540796"
+    },
+    {
+      "course_id": "kr-woo-jeong-hills",
+      "name_en": "Woo Jeong Hills Country Club",
+      "short_name": "Woo Jeong Hills",
+      "aliases": [
+        "Woojeong Hills",
+        "Woo Jeong Hills CC",
+        "우정힐스CC"
+      ],
+      "search_keywords": [
+        "Cheonan",
+        "Chungcheong",
+        "South Korea"
+      ],
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Cheonan",
+      "region": "Chungcheongnam-do",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://whcc.kolon.com/pagesite/club/intro.asp"
+      ],
+      "local_name": "우정힐스 컨트리클럽",
+      "official_address": "충청남도 천안시 동남구 목천읍 충절로 1048-68",
+      "local_address": "충청남도 천안시 동남구 목천읍 충절로 1048-68",
+      "official_website": "https://whcc.kolon.com/pagesite/club/intro.asp",
+      "verification_note": "官方名稱與地址已核實；GPS 參考 FullGolf 球場頁座標，仍待官方球場地圖交叉確認。",
+      "timezone": "Asia/Seoul",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "latitude": 36.766741,
+      "longitude": 127.224659,
+      "coordinate_source": "https://www.fullgolf.com/en/golf-club/south-korea/south-chungcheong/cheonan/woo-jeong-hills-country-club"
+    },
+    {
+      "course_id": "cn-mission-hills-shenzhen",
+      "name_en": "Mission Hills Golf Club Shenzhen",
+      "short_name": "Mission Hills Golf Club Shenzhen",
+      "aliases": [
+        "Mission Hills Shenzhen"
+      ],
+      "search_keywords": [
+        "Shenzhen",
+        "Guangdong",
+        "China"
+      ],
+      "country": "China",
+      "country_code": "CN",
+      "city": "Shenzhen",
+      "region": "Guangdong",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.missionhillschina.com/en/others/about-us/contact-us/",
+        "https://www.fullgolf.com/en/golf-club/china/guangdong/shenzhen/mission-hills-golf-club-shenzhen"
+      ],
+      "local_name": "观澜湖高尔夫球会（深圳）",
+      "official_address": "中国广东省深圳市龙华区观澜高尔夫大道1号，邮编518110",
+      "local_address": "中国广东省深圳市龙华区观澜高尔夫大道1号",
+      "timezone": "Asia/Shanghai",
+      "official_website": "https://www.missionhillschina.com/others/about-us/contact-us/",
+      "verification_note": "官方聯絡頁確認深圳場名稱與地址；FullGolf 提供球場位置座標。因 Mission Hills 為大型多球場園區，座標先採球場資料庫所列主場位置，仍待官方場區圖再次核對。",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 22.728381,
+      "longitude": 114.070053
+    },
+    {
+      "course_id": "cn-mission-hills-dongguan",
+      "name_en": "Mission Hills Golf Club Dongguan",
+      "short_name": "Mission Hills Golf Club Dongguan",
+      "aliases": [
+        "Mission Hills Dongguan"
+      ],
+      "search_keywords": [
+        "Dongguan",
+        "Guangdong",
+        "China"
+      ],
+      "country": "China",
+      "country_code": "CN",
+      "city": "Dongguan",
+      "region": "Guangdong",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.missionhillschina.com/en/others/about-us/contact-us/",
+        "https://fullgolf.com/en/golf-club/china/guangdong/dongguan/mission-hills-golf-club-dongguan"
+      ],
+      "local_name": "观澜湖高尔夫球会（东莞）",
+      "official_address": "中国广东省东莞市塘厦镇大坪林坪路，邮编523722",
+      "local_address": "中国广东省东莞市塘厦镇大坪林坪路",
+      "timezone": "Asia/Shanghai",
+      "official_website": "https://www.missionhillschina.com/others/about-us/contact-us/",
+      "verification_note": "官方聯絡頁確認東莞場位於塘廈大坪林坪路；FullGolf 提供 Dongguan resort 球場座標。因園區包含多個球場，仍待官方場區圖確認此點是否為代表性球場位置。",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 23.02067,
+      "longitude": 113.75179
+    },
+    {
+      "course_id": "cn-sheshan",
+      "name_en": "Sheshan International Golf Club",
+      "short_name": "Sheshan International Golf Club",
+      "aliases": [
+        "Sheshan International"
+      ],
+      "search_keywords": [
+        "Shanghai",
+        "Shanghai",
+        "China"
+      ],
+      "country": "China",
+      "country_code": "CN",
+      "city": "Shanghai",
+      "region": "Shanghai",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.sheshangolf.com/",
+        "https://www.where2golf.com/china/sheshan-golf-club/",
+        "https://mapcarta.com/W414295341"
+      ],
+      "local_name": "佘山国际高尔夫俱乐部",
+      "official_address": "中国上海市松江区佘山镇国家旅游度假区",
+      "local_address": "上海市松江区佘山国家旅游度假区林荫新路288弄",
+      "timezone": "Asia/Shanghai",
+      "official_website": "https://www.sheshangolf.com/",
+      "verification_note": "Where2Golf 座標與 Mapcarta/OpenStreetMap 的 She Shan Golf Club 球場範圍位置相符；另有 FullGolf 座標明顯偏離，故不採用該筆。此座標仍非球會官方 GPS，保留部分驗證。",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 31.105843,
+      "longitude": 121.217694
+    },
+    {
+      "course_id": "cn-yalong-bay",
+      "name_en": "Yalong Bay Golf Club",
+      "short_name": "Yalong Bay Golf Club",
+      "aliases": [
+        "Yalong Bay"
+      ],
+      "search_keywords": [
+        "Sanya",
+        "Hainan",
+        "China"
+      ],
+      "country": "China",
+      "country_code": "CN",
+      "city": "Sanya",
+      "region": "Hainan",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://ditu.amap.com/place/B0383004JE",
+        "https://www.hsbc.com.hk/content/dam/hsbc/hk/sc/docs/jade/golf-programme-address.pdf"
+      ],
+      "local_name": "亚龙湾高尔夫球会",
+      "official_address": "中国海南省三亚市吉阳区龙海路22号亚龙湾国家旅游度假区内",
+      "local_address": "三亚市吉阳区龙海路22号亚龙湾国家旅游度假区内",
+      "timezone": "Asia/Shanghai",
+      "verification_note": "座標取自 OpenStreetMap 球場範圍資料（Mapcarta）；仍待官方球場圖資交叉確認。",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 18.23801,
+      "longitude": 109.63205,
+      "coordinate_source": "https://mapcarta.com/W351738370"
+    },
+    {
+      "course_id": "cn-shanqin-bay",
+      "name_en": "Shanqin Bay Golf Club",
+      "short_name": "Shanqin Bay Golf Club",
+      "aliases": [
+        "ShanQin Bay"
+      ],
+      "search_keywords": [
+        "Wanning",
+        "Hainan",
+        "China"
+      ],
+      "country": "China",
+      "country_code": "CN",
+      "city": "Wanning",
+      "region": "Hainan",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": 19.0541,
+      "longitude": 110.56244,
+      "coordinate_source": "https://mapcarta.com/W878237942",
+      "verification_note": "球場位置與座標參考 OpenStreetMap 球場範圍資料（Mapcarta）；時區依海南省所在地 IANA Asia/Shanghai。仍待官方球場圖資交叉確認。",
+      "timezone": "Asia/Shanghai"
+    },
+    {
+      "course_id": "vn-ba-na-hills",
+      "name_en": "Ba Na Hills Golf Club",
+      "short_name": "Ba Na Hills Golf Club",
+      "aliases": [
+        "Ba Na Hills"
+      ],
+      "search_keywords": [
+        "Da Nang",
+        "Da Nang",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Da Nang",
+      "region": "Da Nang",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://banahillsgolf.com/the-course/",
+        "https://banahillsgolf.com/",
+        "https://danangfantasticity.com/enjoy-mice-golf/experience-in-da-nang"
+      ],
+      "local_name": "Ba Na Hills Golf Club",
+      "official_address": "An Son Hamlet, Ba Na Commune, Da Nang City, Vietnam",
+      "local_address": "An Sơn, Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://banahillsgolf.com/",
+      "verification_note": "Golf-course specialist directory provides explicit course coordinates; official club page confirms course identity and address. Partial pending official map/pin cross-check.",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 16.017261,
+      "longitude": 108.049971,
+      "coordinate_source": "https://www.where2golf.com/vietnam/ba-na-hills-golf-club/"
+    },
+    {
+      "course_id": "vn-hoiana-shores",
+      "name_en": "Hoiana Shores Golf Club",
+      "short_name": "Hoiana Shores Golf Club",
+      "aliases": [
+        "Hoiana Shores"
+      ],
+      "search_keywords": [
+        "Duy Xuyen",
+        "Quang Nam",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Duy Xuyen",
+      "region": "Quang Nam",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.hoiana.com/golf/home"
+      ],
+      "local_name": "Hoiana Shores Golf Club",
+      "official_address": "Hoiana Resort & Golf, Tay Son Tay Hamlet, Duy Nghia Commune, Da Nang City, Vietnam",
+      "local_address": "Thôn Tây Sơn Tây, xã Duy Nghĩa, thành phố Đà Nẵng, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://www.hoiana.com/golf/home",
+      "verification_note": "Golf-course specialist directory provides explicit course coordinates; Hoiana official site confirms course identity and location within Hoiana Resort & Golf. Partial pending official map/pin cross-check.",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 15.821549,
+      "longitude": 108.404053,
+      "coordinate_source": "https://www.where2golf.com/vietnam/hoiana-shores-golf-club/"
+    },
+    {
+      "course_id": "vn-laguna-lang-co",
+      "name_en": "Laguna Lang Co Golf Club",
+      "short_name": "Laguna Lang Co Golf Club",
+      "aliases": [
+        "Laguna Lang Co"
+      ],
+      "search_keywords": [
+        "Phu Loc",
+        "Thua Thien Hue",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Phu Loc",
+      "region": "Thua Thien Hue",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.lagunalangco.com/contact/",
+        "https://www.lagunalangco.com/golf/"
+      ],
+      "local_name": "Sân golf Laguna Lăng Cô",
+      "official_address": "Canh Duong Village, Chan May – Lang Co Commune, Hue City, Vietnam",
+      "local_address": "Thôn Cảnh Dương, xã Chân Mây – Lăng Cô, thành phố Huế, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://www.lagunalangco.com/",
+      "verification_note": "Golf-course specialist directory provides explicit course coordinates; Laguna official page confirms golf facility and address. Partial pending official map/pin cross-check.",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 16.324958,
+      "longitude": 107.959213,
+      "coordinate_source": "https://www.where2golf.com/vietnam/laguna-lang-co-golf-club/"
+    },
+    {
+      "course_id": "vn-legend-da-nang",
+      "name_en": "Legend Da Nang Golf Resort",
+      "short_name": "Legend Da Nang Golf Resort",
+      "aliases": [
+        "Legend Da Nang"
+      ],
+      "search_keywords": [
+        "Da Nang",
+        "Da Nang",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Da Nang",
+      "region": "Da Nang",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.dananggolfclub.com/public/contact",
+        "https://www.dananggolfclub.com/",
+        "https://danangfantasticity.com/en/du-lich-golf/legend-danang-golf-resort"
+      ],
+      "local_name": "Legend Da Nang Golf Resort",
+      "official_address": "726 Truong Sa St., Ngu Hanh Son Ward, Da Nang City, Vietnam",
+      "local_address": "726 đường Trường Sa, phường Ngũ Hành Sơn, thành phố Đà Nẵng, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://www.dananggolfclub.com/",
+      "verification_note": "Specialist golf course directory identifies the BRG/Legend Da Nang course and provides coordinates; official club website confirms 726 Truong Sa address. Partial pending official map/pin cross-check.",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 16.0208,
+      "longitude": 108.2602,
+      "coordinate_source": "https://playgolfvietnam.com/courses/brg-da-nang-golf-resort"
+    },
+    {
+      "course_id": "vn-montgomerie-links",
+      "name_en": "Montgomerie Links Vietnam",
+      "short_name": "Montgomerie Links Vietnam",
+      "aliases": [
+        "Montgomerie Links"
+      ],
+      "search_keywords": [
+        "Da Nang",
+        "Quang Nam",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Da Nang",
+      "region": "Quang Nam",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.montgomerielinks.com/index.php/about-us",
+        "https://www.montgomerielinks.com/membership",
+        "https://danangfantasticity.com/en/montgomerie-links-3"
+      ],
+      "local_name": "Montgomerie Links Vietnam",
+      "official_address": "Coastal Road, Dien Ban Dong Ward, Da Nang City, Vietnam",
+      "local_address": "Đường ven biển, phường Điện Bàn Đông, thành phố Đà Nẵng, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://www.montgomerielinks.com/",
+      "verification_note": "Golf-course specialist directory provides explicit course coordinates; Golf Coast Vietnam directory corroborates course identity and Dien Ngoc location. Partial pending official map/pin cross-check.",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "latitude": 15.964434,
+      "longitude": 108.286453,
+      "coordinate_source": "https://www.where2golf.com/vietnam/montgomerie-links-vietnam/"
+    },
+    {
+      "course_id": "th-black-mountain",
+      "name_en": "Black Mountain Golf Club",
+      "short_name": "Black Mountain Golf Club",
+      "aliases": [
+        "Black Mountain Hua Hin"
+      ],
+      "search_keywords": [
+        "Hua Hin",
+        "Prachuap Khiri Khan",
+        "Thailand"
+      ],
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Hua Hin",
+      "region": "Prachuap Khiri Khan",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://blackmountainhuahin.com/contact"
+      ],
+      "official_address": "565 Moo 7, Nong Hieng Road, Hin Lek Fai, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
+      "local_address": "565 Moo 7, Nong Hieng Road, Hin Lek Fai, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
+      "timezone": "Asia/Bangkok",
+      "official_website": "https://blackmountainhuahin.com/contact",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "官方球場聯絡頁確認地址；高爾夫球場專業資料頁提供 clubhouse GPS 12.61440, 99.89170。座標屬 clubhouse 位置，保留部分核實狀態，後續再以官方地圖交叉確認。",
+      "latitude": 12.6144,
+      "longitude": 99.8917,
+      "coordinate_source": "https://playgolfglobal.com/thailand/courses/black-mountain-golf-club-hua-hin"
+    },
+    {
+      "course_id": "th-pineapple-valley",
+      "name_en": "Pineapple Valley Golf Club",
+      "short_name": "Pineapple Valley Golf Club",
+      "aliases": [
+        "Pineapple Valley"
+      ],
+      "search_keywords": [
+        "Hua Hin",
+        "Prachuap Khiri Khan",
+        "Thailand"
+      ],
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Hua Hin",
+      "region": "Prachuap Khiri Khan",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://pineapplevalleygolfclub.com/"
+      ],
+      "official_address": "101 Moo 9, Tambol Thap Tai, Hua Hin, Prachuap Khiri Khan 77110, Thailand",
+      "local_address": "101 Moo 9, Tambol Thap Tai, Hua Hin, Prachuap Khiri Khan 77110, Thailand",
+      "timezone": "Asia/Bangkok",
+      "official_website": "https://pineapplevalleygolfclub.com/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "Golf-course specialist directory provides explicit course coordinates and confirms the Hua Hin course address. Kept partially verified pending official club map cross-check.",
+      "latitude": 12.495462,
+      "longitude": 99.941511,
+      "coordinate_source": "https://www.where2golf.com/thailand/pineapple-valley-golf-club/"
+    },
+    {
+      "course_id": "th-siam-old",
+      "name_en": "Siam Country Club Old Course",
+      "short_name": "Siam Country Club Old Course",
+      "aliases": [
+        "Siam Old Course"
+      ],
+      "search_keywords": [
+        "Pattaya",
+        "Chonburi",
+        "Thailand"
+      ],
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Pattaya",
+      "region": "Chonburi",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.siammotors.com/en/company/siam-country-club-pattaya-old-course/",
+        "https://siamcountryclub.com/old-course/"
+      ],
+      "official_address": "50 Moo 9, Tambon Pong, Bang Lamung, Chonburi 20150, Thailand",
+      "local_address": "50 Moo 9, Tambon Pong, Bang Lamung, Chonburi 20150, Thailand",
+      "timezone": "Asia/Bangkok",
+      "official_website": "https://siamcountryclub.com/old-course/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "官方名稱與地址已核實；GPS 取自 OpenStreetMap golf_course 圖徵資料（Mapcarta），代表 Old Course 球場區域，仍待官方地圖交叉確認。",
+      "latitude": 12.91061,
+      "longitude": 100.98388,
+      "coordinate_source": "https://mapcarta.com/W132473847"
+    },
+    {
+      "course_id": "th-red-mountain",
+      "name_en": "Red Mountain Golf Club",
+      "short_name": "Red Mountain Golf Club",
+      "aliases": [
+        "Red Mountain Phuket"
+      ],
+      "search_keywords": [
+        "Phuket",
+        "Phuket",
+        "Thailand"
+      ],
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Phuket",
+      "region": "Phuket",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": 7.92234,
+      "longitude": 98.33801,
+      "coordinate_source": "https://mapcarta.com/N14122109445",
+      "verification_note": "座標取自 OpenStreetMap 球場地標資料（Mapcarta）；仍待官方球場圖資交叉確認。",
+      "timezone": "Asia/Bangkok"
+    },
+    {
+      "course_id": "th-nikanti",
+      "name_en": "Nikanti Golf Club",
+      "short_name": "Nikanti Golf Club",
+      "aliases": [
+        "Nikanti"
+      ],
+      "search_keywords": [
+        "Nakhon Pathom",
+        "Nakhon Pathom",
+        "Thailand"
+      ],
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Nakhon Pathom",
+      "region": "Nakhon Pathom",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": 13.79626,
+      "longitude": 100.10862,
+      "coordinate_source": "https://mapcarta.com/W1491846622",
+      "verification_note": "座標取自 OpenStreetMap 球場範圍資料（Mapcarta）；仍待官方球場圖資交叉確認。",
+      "timezone": "Asia/Bangkok"
+    },
+    {
+      "course_id": "my-klgcc",
+      "name_en": "Kuala Lumpur Golf & Country Club",
+      "short_name": "Kuala Lumpur Golf & Country Club",
+      "aliases": [
+        "KLGCC"
+      ],
+      "search_keywords": [
+        "Kuala Lumpur",
+        "Kuala Lumpur",
+        "Malaysia"
+      ],
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "region": "Kuala Lumpur",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.klgcc.com/about/contact-us"
+      ],
+      "official_address": "10, Jalan 1/70D, Off Jalan Bukit Kiara, 60000 Kuala Lumpur, Malaysia",
+      "local_address": "10, Jalan 1/70D, Off Jalan Bukit Kiara, 60000 Kuala Lumpur, Malaysia",
+      "timezone": "Asia/Kuala_Lumpur",
+      "official_website": "https://www.klgcc.com/about/contact-us",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "官方名稱與地址已核實；GPS 取自 OpenStreetMap golf_course 多邊形中心點（GeoView），代表球場區域，仍待官方地圖交叉確認。",
+      "latitude": 3.14002,
+      "longitude": 101.63973,
+      "coordinate_source": "https://my.geoview.info/kuala_lumpur_golf_and_country_club%2C9519926r"
+    },
+    {
+      "course_id": "my-royal-selangor",
+      "name_en": "The Royal Selangor Golf Club",
+      "short_name": "The Royal Selangor Golf Club",
+      "aliases": [
+        "RSGC"
+      ],
+      "search_keywords": [
+        "Kuala Lumpur",
+        "Kuala Lumpur",
+        "Malaysia"
+      ],
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "region": "Kuala Lumpur",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://rsgc.com.my/contact/"
+      ],
+      "official_address": "Jalan Kelab Golf, Off Jalan Tun Razak, 55000 Kuala Lumpur, Malaysia",
+      "local_address": "Jalan Kelab Golf, Off Jalan Tun Razak, 55000 Kuala Lumpur, Malaysia",
+      "timezone": "Asia/Kuala_Lumpur",
+      "official_website": "https://rsgc.com.my/contact/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "Official RSGC contact page confirms the Jalan Kelab Golf address; Wikidata coordinate is corroborated by map position but is not an official club map. Kept partially verified pending official map cross-check.",
+      "latitude": 3.14889,
+      "longitude": 101.72583,
+      "coordinate_source": "https://www.wikidata.org/wiki/Q1822228"
+    },
+    {
+      "course_id": "my-saujana",
+      "name_en": "Saujana Golf & Country Club",
+      "short_name": "Saujana Golf & Country Club",
+      "aliases": [
+        "Saujana"
+      ],
+      "search_keywords": [
+        "Shah Alam",
+        "Selangor",
+        "Malaysia"
+      ],
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Shah Alam",
+      "region": "Selangor",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://mgaonline.com.my/affiliated-clubs/selangor/",
+        "https://saujanagolf.com.my/"
+      ],
+      "official_address": "Saujana Resort, Seksyen U2, 40150 Shah Alam, Selangor, Malaysia",
+      "local_address": "Saujana Resort, Seksyen U2, 40150 Shah Alam, Selangor, Malaysia",
+      "timezone": "Asia/Kuala_Lumpur",
+      "official_website": "https://saujanagolf.com.my/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "雪蘭莪州官方旅遊局出版的 Selangor Breakaway 高爾夫名錄列出 Saujana Golf and Country Club GPS 3.10662, 101.57520；保留部分核實狀態，待官方球場地圖交叉確認。",
+      "latitude": 3.10662,
+      "longitude": 101.5752,
+      "coordinate_source": "https://selangor.travel/wp-content/uploads/2022/03/Selangor-Breakaway.pdf"
+    },
+    {
+      "course_id": "my-kota-permai",
+      "name_en": "Kota Permai Golf & Country Club",
+      "short_name": "Kota Permai Golf & Country Club",
+      "aliases": [
+        "Kota Permai"
+      ],
+      "search_keywords": [
+        "Shah Alam",
+        "Selangor",
+        "Malaysia"
+      ],
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Shah Alam",
+      "region": "Selangor",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.kotapermai.com.my/contact-us/"
+      ],
+      "official_address": "No. 1, Jalan 31/100A, Kota Kemuning, Section 31, 40460 Shah Alam, Selangor, Malaysia",
+      "local_address": "No. 1, Jalan 31/100A, Kota Kemuning, Section 31, 40460 Shah Alam, Selangor, Malaysia",
+      "timezone": "Asia/Kuala_Lumpur",
+      "official_website": "https://www.kotapermai.com.my/contact-us/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "雪蘭莪州官方旅遊局出版的 Selangor Breakaway 高爾夫名錄列出 Kota Permai Golf & Country Club GPS 2.99700, 101.53442；保留部分核實狀態，待官方球場地圖交叉確認。",
+      "latitude": 2.997,
+      "longitude": 101.53442,
+      "coordinate_source": "https://selangor.travel/wp-content/uploads/2022/03/Selangor-Breakaway.pdf"
+    },
+    {
+      "course_id": "my-els-teluk-datai",
+      "name_en": "The Els Club Teluk Datai",
+      "short_name": "The Els Club Teluk Datai",
+      "aliases": [
+        "Els Club Teluk Datai"
+      ],
+      "search_keywords": [
+        "Langkawi",
+        "Kedah",
+        "Malaysia"
+      ],
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Langkawi",
+      "region": "Kedah",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": 6.426397,
+      "longitude": 99.683912,
+      "coordinate_source": "https://www.where2golf.com/malaysia/the-els-club-teluk-datai/",
+      "verification_note": "座標參考 Where2Golf 球場頁，並以官方 Els Club 地址頁核對球場身分；GPS 仍待官方地圖交叉確認。",
+      "timezone": "Asia/Kuala_Lumpur"
+    },
+    {
+      "course_id": "sg-sentosa",
+      "name_en": "Sentosa Golf Club",
+      "short_name": "Sentosa Golf Club",
+      "aliases": [
+        "Sentosa Golf"
+      ],
+      "search_keywords": [
+        "Singapore",
+        "Singapore",
+        "Singapore"
+      ],
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "region": "Singapore",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://sentosagolf.com/"
+      ],
+      "official_address": "27 Bukit Manis Road, Singapore 099892",
+      "local_address": "27 Bukit Manis Road, Singapore 099892",
+      "timezone": "Asia/Singapore",
+      "official_website": "https://sentosagolf.com/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "官方名稱與地址已核實；GPS 參考 Where2Golf 的 Serapong 球場位置，適用於 Sentosa Golf Club 場區，仍待官方地圖交叉確認。",
+      "latitude": 1.248855,
+      "longitude": 103.829331,
+      "coordinate_source": "https://www.where2golf.com/singapore/sentosa-golf-club-serapong-course/"
+    },
+    {
+      "course_id": "sg-sicc",
+      "name_en": "Singapore Island Country Club",
+      "short_name": "Singapore Island Country Club",
+      "aliases": [
+        "SICC"
+      ],
+      "search_keywords": [
+        "Singapore",
+        "Singapore",
+        "Singapore"
+      ],
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "region": "Singapore",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://sga.org.sg/golfsg/",
+        "https://www.sicc.org.sg/"
+      ],
+      "official_address": "240 Sime Road, Singapore 288303 (Bukit location)",
+      "local_address": "240 Sime Road, Singapore 288303 (Bukit location)",
+      "timezone": "Asia/Singapore",
+      "official_website": "https://www.sicc.org.sg/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "SICC official contact page distinguishes Island and Bukit locations; this point maps the Bukit & Sime courses from OpenStreetMap-derived Mapcarta. Existing address identifies Bukit/Sime; kept partial pending official confirmation of exact entrance/pin.",
+      "latitude": 1.34283,
+      "longitude": 103.81111,
+      "coordinate_source": "https://mapcarta.com/W37586157"
+    },
+    {
+      "course_id": "sg-tanah-merah",
+      "name_en": "Tanah Merah Country Club",
+      "short_name": "Tanah Merah Country Club",
+      "aliases": [
+        "TMCC"
+      ],
+      "search_keywords": [
+        "Singapore",
+        "Singapore",
+        "Singapore"
+      ],
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "region": "Singapore",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": 1.33122,
+      "longitude": 103.97966,
+      "coordinate_source": "https://mapcarta.com/W150880946",
+      "verification_note": "座標取自 OpenStreetMap Garden Course 球場範圍資料（Mapcarta）；代表俱樂部 Garden Course，仍待官方確認。",
+      "timezone": "Asia/Singapore"
+    },
+    {
+      "course_id": "sg-laguna-national",
+      "name_en": "Laguna National Golf Resort Club",
+      "short_name": "Laguna National Golf Resort Club",
+      "aliases": [
+        "Laguna National"
+      ],
+      "search_keywords": [
+        "Singapore",
+        "Singapore",
+        "Singapore"
+      ],
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "region": "Singapore",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.lagunanational.com/contact"
+      ],
+      "official_address": "11 Laguna Golf Green, Singapore 488047",
+      "local_address": "11 Laguna Golf Green, Singapore 488047",
+      "timezone": "Asia/Singapore",
+      "official_website": "https://www.lagunanational.com/contact",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "官方名稱與地址已核實；GPS 取自 OpenStreetMap leisure=golf_course 圖徵資料（Mapcarta），代表 Laguna National 球場區域，非鄰近 Dusit 酒店座標。",
+      "latitude": 1.31374,
+      "longitude": 103.95067,
+      "coordinate_source": "https://mapcarta.com/W614939399"
+    },
+    {
+      "course_id": "sg-orchid",
+      "name_en": "Orchid Country Club",
+      "short_name": "Orchid Country Club",
+      "aliases": [
+        "Orchid CC"
+      ],
+      "search_keywords": [
+        "Singapore",
+        "Singapore",
+        "Singapore"
+      ],
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "region": "Singapore",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://sga.org.sg/golfsg/",
+        "https://www.orchidclub.com/"
+      ],
+      "official_address": "1 Orchid Club Road, Singapore 769162",
+      "local_address": "1 Orchid Club Road, Singapore 769162",
+      "timezone": "Asia/Singapore",
+      "official_website": "https://www.orchidclub.com/",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "Orchid Country Club official contact page confirms address; independent golf course guide publishes OpenStreetMap course-view coordinates. Kept partially verified pending official map cross-check.",
+      "latitude": 1.4109,
+      "longitude": 103.8437,
+      "coordinate_source": "https://mbgc.com.sg/where-to-play/orchid-country-club/"
+    },
+    {
+      "course_id": "id-new-kuta",
+      "name_en": "New Kuta Golf",
+      "short_name": "New Kuta Golf",
+      "aliases": [
+        "New Kuta Golf Club"
+      ],
+      "search_keywords": [
+        "Bali",
+        "Bali",
+        "Indonesia"
+      ],
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Bali",
+      "region": "Bali",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://sisupar.kemenpar.go.id/usaha-tersertifikasi?kategori%5B0%5D=28"
+      ],
+      "official_address": "Kawasan Pecatu Indah Resort, Jl. New Kuta Golf, Pecatu, Kuta Selatan, Badung, Bali 80361, Indonesia",
+      "local_address": "Kawasan Pecatu Indah Resort, Jl. New Kuta Golf, Pecatu, Kuta Selatan, Badung, Bali 80361, Indonesia",
+      "timezone": "Asia/Makassar",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "座標參考 Parscape 球場頁，並以 New Kuta Golf 官方網站核對球場身分；仍待官方地圖交叉確認。",
+      "latitude": -8.804,
+      "longitude": 115.1281,
+      "coordinate_source": "https://www.parscape.com/location/golf_clubs/newkutagolfcoursebadungbali"
+    },
+    {
+      "course_id": "id-handara",
+      "name_en": "Handara Golf & Resort Bali",
+      "short_name": "Handara Golf & Resort Bali",
+      "aliases": [
+        "Handara Golf"
+      ],
+      "search_keywords": [
+        "Bedugul",
+        "Bali",
+        "Indonesia"
+      ],
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Bedugul",
+      "region": "Bali",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://gogolfnow.com/"
+      ],
+      "latitude": -8.24704,
+      "longitude": 115.16163,
+      "coordinate_source": "https://id.geoview.info/handara_golf_and_resort_bali%2C20129317885w",
+      "verification_note": "座標取自 OpenStreetMap 球場範圍多邊形中心（GeoView）；仍待官方球場圖資交叉確認。",
+      "timezone": "Asia/Makassar"
+    },
+    {
+      "course_id": "id-damai-pik",
+      "name_en": "Damai Indah Golf PIK Course",
+      "short_name": "Damai Indah Golf PIK Course",
+      "aliases": [
+        "PIK Course"
+      ],
+      "search_keywords": [
+        "Jakarta",
+        "Jakarta",
+        "Indonesia"
+      ],
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Jakarta",
+      "region": "Jakarta",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://sisupar.kemenpar.go.id/usaha-tersertifikasi?kategori%5B0%5D=28"
+      ],
+      "official_address": "Jalan Pantai Indah Barat, Jakarta Utara, DKI Jakarta, Indonesia",
+      "local_address": "Jalan Pantai Indah Barat, Jakarta Utara, DKI Jakarta, Indonesia",
+      "timezone": "Asia/Jakarta",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "座標取自 Where2Golf PIK Course 專屬頁；已區分 PIK 與 BSD 球場，仍待官方地圖交叉確認。",
+      "latitude": -6.11308,
+      "longitude": 106.744747,
+      "coordinate_source": "https://www.where2golf.com/indonesia/damai-indah-golf-pantai-indah-kapuk-pik-course/"
+    },
+    {
+      "course_id": "id-pondok-indah",
+      "name_en": "Pondok Indah Golf Course",
+      "short_name": "Pondok Indah Golf Course",
+      "aliases": [
+        "Pondok Indah Golf"
+      ],
+      "search_keywords": [
+        "Jakarta",
+        "Jakarta",
+        "Indonesia"
+      ],
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Jakarta",
+      "region": "Jakarta",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.where2golf.com/indonesia/pondok-indah-golf-course/",
+        "https://mapcarta.com/W28420725"
+      ],
+      "official_address": "Jl. Metro Pondok Indah, Jakarta Selatan, DKI Jakarta, Indonesia",
+      "local_address": "Jl. Metro Pondok Indah, Jakarta Selatan, DKI Jakarta, Indonesia",
+      "timezone": "Asia/Jakarta",
+      "verified_at": "2026-11-20T00:00:00+08:00",
+      "verification_note": "Where2Golf 提供球場座標；Mapcarta/OpenStreetMap 球場範圍中心相距約數百公尺，互相支持其位置。仍非球場官方 GPS，保留部分驗證。",
+      "latitude": -6.269504,
+      "longitude": 106.785443
+    },
+    {
+      "course_id": "id-jagorawi",
+      "name_en": "Jagorawi Golf & Country Club",
+      "short_name": "Jagorawi Golf & Country Club",
+      "aliases": [
+        "Jagorawi Golf"
+      ],
+      "search_keywords": [
+        "Bogor",
+        "West Java",
+        "Indonesia"
+      ],
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Bogor",
+      "region": "West Java",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://jagorawi.com/map-directions/",
+        "https://www.where2golf.com/indonesia/jagorawi-golf-country-club-old-course/"
+      ],
+      "latitude": -6.454335,
+      "longitude": 106.87676,
+      "timezone": "Asia/Jakarta",
+      "verification_note": "球會官方路線頁確認 Karanggan 主入口與球場位置關係；Where2Golf 提供 Old Course 座標。座標位於官方所述球會範圍附近，仍待官方場區圖確認。"
+    },
+    {
+      "course_id": "jp-shinsodegaura",
+      "name_en": "Sodegaura Country Club – New Sodegaura Course",
+      "short_name": "New Sodegaura Course",
+      "local_name": "袖ヶ浦カンツリークラブ 新袖コース",
+      "aliases": [
+        "Shin-Sodegaura Course",
+        "New Sodegaura",
+        "新袖コース",
+        "袖ヶ浦カンツリークラブ新袖"
+      ],
+      "search_keywords": [
+        "Chiba",
+        "Chiba City Wakaba Ward",
+        "Japan",
+        "千葉市若葉区",
+        "富田町",
+        "265-0041"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Chiba",
+      "region": "Chiba",
+      "official_address": "〒265-0041 千葉県千葉市若葉区富田町1140番地",
+      "local_address": "〒265-0041 千葉県千葉市若葉区富田町1140番地",
+      "latitude": 35.58116563392002,
+      "longitude": 140.202886209867,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.sodegaura.co.jp/access/",
+      "data_source": [
+        "https://www.sodegaura.co.jp/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25959.100919205597!2d140.202886209867!3d35.58116563392002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022915b38da9eff:0xa8ffcbc185499c26!2z6KKW44O25rWm44Kr44Oz44OE44Oq44O844Kv44Op44OW5paw6KKW44Kz44O844K5!5e0!3m2!1sja!2sjp!4v1584336852748!5m2!1sja!2sjp"
+      ],
+      "coordinate_source": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25959.100919205597!2d140.202886209867!3d35.58116563392002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022915b38da9eff:0xa8ffcbc185499c26!2z6KKW44O25rWm44Kr44Oz44OE44Oq44O844Kv44Op44OW5paw6KKW44Kz44O844K5!5e0!3m2!1sja!2sjp!4v1584336852748!5m2!1sja!2sjp",
+      "verification_status": "verified",
+      "verified_at": "2026-11-20T00:00:00+09:00",
+      "verification_note": "球場官方網站分列袖ヶ浦コース與新袖コース，兩者地址與官方地圖位置分開建檔。 GPS coordinates taken from the Google Maps iframe embedded on the official club access page."
+    },
+    {
+      "course_id": "vn-long-bien",
+      "name_en": "Long Bien Golf Course",
+      "short_name": "Long Bien Golf",
+      "aliases": [
+        "Long Bien Golf Club",
+        "Sân Golf Long Biên",
+        "Long Biên Golf Course"
+      ],
+      "search_keywords": [
+        "Long Bien",
+        "Long Biên",
+        "Phuc Dong",
+        "Phường Long Biên",
+        "Hanoi",
+        "Vietnam",
+        "Regiment 918"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Hanoi",
+      "region": "Hanoi",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://www.longbiengolf.vn/lien-he.html",
+        "https://gltv.com.vn/golf-course-vn",
+        "https://www.where2golf.com/vietnam/long-bien-golf-club/"
+      ],
+      "local_name": "Sân Golf Long Biên",
+      "official_address": "Khu Trung Đoàn 918, Phường Long Biên, Hà Nội, Vietnam",
+      "local_address": "Khu Trung Đoàn 918, Phường Long Biên, Hà Nội, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://www.longbiengolf.vn/",
+      "latitude": 21.0376812,
+      "longitude": 105.8957893,
+      "coordinate_source": "https://gltv.com.vn/golf-course-vn (Google Maps location link: Long Bien Golf Course)",
+      "verified_at": "2026-11-20T00:00:00+07:00",
+      "verification_note": "Official Long Bien Golf Course website confirms course identity and address; GLTV course directory links directly to its Google Maps pin. Coordinates are taken from the resolved Google Maps place pin. Kept partially verified pending official map iframe coordinate confirmation."
+    },
+    {
+      "course_id": "vn-legend-hill",
+      "name_en": "BRG Legend Hill Golf Resort",
+      "short_name": "Legend Hill Golf",
+      "aliases": [
+        "Legend Hill Country Club",
+        "BRG Legend Hill",
+        "Legend Hill Golf Club",
+        "Sân golf Legend Hill"
+      ],
+      "search_keywords": [
+        "Legend Hill",
+        "BRG",
+        "Cong Hoa",
+        "Soc Son",
+        "Hanoi",
+        "Noi Bai",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Soc Son",
+      "region": "Hanoi",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://legendhillcountryclub.vn/",
+        "https://gltv.com.vn/golf-course-vn",
+        "https://kingsislandgolf.vn/Images/admin/File/E-Newsletter/2022/BRG%20Golf%20E-Newsletter%20012022%20EN.pdf"
+      ],
+      "local_name": "BRG Legend Hill Golf Resort",
+      "official_address": "Cong Hoa Hamlet, Soc Son Commune, Hanoi City, Vietnam",
+      "local_address": "Thôn Cộng Hòa, Xã Sóc Sơn, Hà Nội, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://legendhillcountryclub.vn/",
+      "latitude": 21.2969144,
+      "longitude": 105.8415291,
+      "coordinate_source": "https://gltv.com.vn/golf-course-vn (Google Maps location link: BRG Legend Hill Golf Resort)",
+      "verified_at": "2026-11-20T00:00:00+07:00",
+      "verification_note": "Official BRG Legend Hill contact page confirms course identity and Cong Hoa, Soc Son address; GLTV course directory links directly to its Google Maps pin. Coordinates are taken from the resolved Google Maps place pin. Kept partially verified pending official map iframe coordinate confirmation."
+    },
+    {
+      "course_id": "vn-kings-island",
+      "name_en": "BRG Kings Island Golf Resort",
+      "short_name": "Kings Island Golf",
+      "aliases": [
+        "Kings Island",
+        "King's Island Golf Resort",
+        "BRG King's Island",
+        "Kings Island Golf Resort Hanoi",
+        "Đảo Vua"
+      ],
+      "search_keywords": [
+        "Kings Island",
+        "King's Island",
+        "BRG",
+        "Dong Mo",
+        "Đồng Mô",
+        "Doai Phuong",
+        "Son Tay",
+        "Hanoi",
+        "Vietnam"
+      ],
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Doai Phuong",
+      "region": "Hanoi",
+      "verification_status": "partially_verified",
+      "data_source": [
+        "https://kingsislandgolf.vn/",
+        "https://gltv.com.vn/golf-course-vn",
+        "https://playgolfvietnam.com/courses/brg-kings-island-golf-resort"
+      ],
+      "local_name": "BRG Kings Island Golf Resort",
+      "official_address": "Đồng Mô, Xã Đoài Phương, Thành phố Hà Nội, Vietnam",
+      "local_address": "Đồng Mô, Xã Đoài Phương, Thành phố Hà Nội, Việt Nam",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "official_website": "https://kingsislandgolf.vn/",
+      "latitude": 21.0584904,
+      "longitude": 105.48877,
+      "coordinate_source": "https://gltv.com.vn/golf-course-vn (Google Maps location link: BRG Kings Island)",
+      "verified_at": "2026-11-20T00:00:00+07:00",
+      "verification_note": "Official BRG Kings Island website confirms Đồng Mô, Xã Đoài Phương, Hanoi and the 55-hole resort comprising Lakeside, Mountain View and Kings courses; GLTV course directory links directly to its Google Maps pin. Coordinates identify the resort, not an individual course entrance. Kept partially verified."
+    },
+    {
+      "course_id": "jp-okinawa-ocean-castle",
+      "name_en": "Ocean Castle Country Club",
+      "short_name": "Ocean Castle CC",
+      "local_name": "オーシャンキャッスルカントリークラブ",
+      "aliases": [
+        "Ocean Castle",
+        "オーシャンキャッスルCC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Nakagusuku",
+        "中城村",
+        "登又",
+        "901-2421"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Nakagusuku",
+      "region": "Okinawa",
+      "official_address": "〒901-2421 沖縄県中頭郡中城村字登又60",
+      "local_address": "〒901-2421 沖縄県中頭郡中城村字登又60",
+      "latitude": 26.281767,
+      "longitude": 127.790184,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://reserve.accordiagolf.com/en/global/golfCourse/okinawa/oceancastle/",
+      "data_source": [
+        "https://reserve.accordiagolf.com/en/global/golfCourse/okinawa/oceancastle/",
+        "https://www.japan47go.travel/en/detail/25e3e07d-6544-47b5-b038-12d0d546dafe"
+      ],
+      "coordinate_source": "https://fullgolf.com/en/golf-club/japan/okinawa/nakagami/ocean-castle-country-club",
+      "verification_status": "partially_verified",
+      "verification_note": "官方球場頁核實名稱及地址；GPS 座標採用 FullGolf 公開地圖座標，尚待官方地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-okinawa-country-club",
+      "name_en": "Okinawa Country Club",
+      "short_name": "Okinawa Country Club",
+      "local_name": "沖縄カントリークラブ",
+      "aliases": [
+        "Okinawa CC",
+        "沖縄CC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Nishihara",
+        "西原町",
+        "東原",
+        "903-0114"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Nishihara",
+      "region": "Okinawa",
+      "official_address": "〒903-0114 沖縄県中頭郡西原町字桃原109",
+      "local_address": "〒903-0114 沖縄県中頭郡西原町字桃原109",
+      "latitude": 26.216972,
+      "longitude": 127.749678,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://reserve.accordiagolf.com/en/global/golfCourse/okinawa/okinawa/",
+      "data_source": [
+        "https://reserve.accordiagolf.com/en/global/golfCourse/okinawa/okinawa/",
+        "https://reserve.accordiagolf.com/en/global/golfcourse/okinawa/okinawa/access/"
+      ],
+      "coordinate_source": "https://fullgolf.com/en/golf-course/japan/okinawa/nakagami/okinawa",
+      "verification_status": "partially_verified",
+      "verification_note": "官方 Accordia 頁面核實球場名稱及地址；GPS 座標採用 FullGolf 公開地圖座標，尚待官方地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-atta-terrace",
+      "name_en": "The Atta Terrace Golf Resort",
+      "short_name": "The Atta Terrace",
+      "local_name": "ジ・アッタテラス ゴルフリゾート",
+      "aliases": [
+        "Atta Terrace Golf Resort",
+        "Atta Terrace",
+        "ジ･アッタテラス"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Onna",
+        "恩納村",
+        "安富祖",
+        "904-0402"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Onna",
+      "region": "Okinawa",
+      "official_address": "〒904-0402 沖縄県国頭郡恩納村安富祖1079",
+      "local_address": "〒904-0402 沖縄県国頭郡恩納村安富祖1079",
+      "latitude": 26.499693,
+      "longitude": 127.896228,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.terrace.co.jp/en/atta/information/outline.php",
+      "data_source": [
+        "https://www.terrace.co.jp/en/atta/information/outline.php",
+        "https://www.japan.travel/en/sports/golf/courses/the-atta-terrace-golf-resort/"
+      ],
+      "coordinate_source": "https://www.where2golf.com/japan/the-atta-terrace-golf-resort/",
+      "verification_status": "partially_verified",
+      "verification_note": "官方網站核實球場名稱及地址；GPS 座標採用 Where2Golf 公開座標，尚待官方地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-ginoza-country-club",
+      "name_en": "Ginoza Country Club",
+      "short_name": "Ginoza Country Club",
+      "local_name": "宜野座カントリークラブ",
+      "aliases": [
+        "Ginoza CC",
+        "宜野座CC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Ginoza",
+        "宜野座村",
+        "松田",
+        "904-1301"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Ginoza",
+      "region": "Okinawa",
+      "official_address": "〒904-1301 沖縄県国頭郡宜野座村字松田2824-264",
+      "local_address": "〒904-1301 沖縄県国頭郡宜野座村字松田2824-264",
+      "latitude": 26.50318,
+      "longitude": 127.98817,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.ginozacc.com/",
+      "data_source": [
+        "https://www.ginozacc.com/",
+        "https://www.japan47go.travel/en/detail/eb6531fa-d936-4bc4-b468-2f4246c4dba3"
+      ],
+      "coordinate_source": "https://mapcarta.com/W189138990",
+      "verification_status": "partially_verified",
+      "verification_note": "官方球場網站及 JAPAN 47 GO 核實名稱與地址；GPS 座標採用 OpenStreetMap/Mapcarta 資料，尚待官方地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-kanehide-kise",
+      "name_en": "Kanehide Kise Country Club",
+      "short_name": "Kanehide Kise CC",
+      "local_name": "かねひで喜瀬カントリークラブ",
+      "aliases": [
+        "Kise Country Club",
+        "Kise CC",
+        "喜瀬カントリークラブ"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Nago",
+        "名護市",
+        "喜瀬",
+        "905-0026"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Nago",
+      "region": "Okinawa",
+      "official_address": "〒905-0026 沖縄県名護市字喜瀬1107-1",
+      "local_address": "〒905-0026 沖縄県名護市字喜瀬1107-1",
+      "latitude": 26.524415,
+      "longitude": 127.93946,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.kise-cc.jp/en/",
+      "data_source": [
+        "https://www.kise-cc.jp/en/",
+        "https://www.japan47go.travel/en/detail/3d922775-986e-4f6d-b08a-5ed2101c7d90"
+      ],
+      "coordinate_source": "https://www.travelmyth.co.uk/Nago/Hotels/Kanehide-Kise-Country-Club_tmid257562",
+      "verification_status": "partially_verified",
+      "verification_note": "官方網站及 JAPAN 47 GO 核實名稱與地址；GPS 座標採用公開地圖住宿頁座標，尚待官方球場地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-ryukyu-golf-club",
+      "name_en": "Ryukyu Golf Club",
+      "short_name": "Ryukyu Golf Club",
+      "local_name": "琉球ゴルフ倶楽部",
+      "aliases": [
+        "Ryukyu GC",
+        "琉球GC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Nanjo",
+        "南城市",
+        "玉城",
+        "901-0608"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Nanjo",
+      "region": "Okinawa",
+      "official_address": "〒901-0608 沖縄県南城市玉城字親慶原1",
+      "local_address": "〒901-0608 沖縄県南城市玉城字親慶原1",
+      "latitude": 26.14932,
+      "longitude": 127.78108,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.ryukyugolf.com/",
+      "data_source": [
+        "https://www.ryukyugolf.com/",
+        "https://mapcarta.com/W189138987"
+      ],
+      "coordinate_source": "https://mapcarta.com/W189138987",
+      "verification_status": "partially_verified",
+      "verification_note": "官方網站核實球場名稱；GPS 座標採用 OpenStreetMap/Mapcarta 球場範圍座標，官方地址仍需進一步核對，故暫列部分核實。"
+    },
+    {
+      "course_id": "jp-shigira-bay",
+      "name_en": "Shigira Bay Country Club",
+      "short_name": "Shigira Bay CC",
+      "local_name": "シギラベイカントリークラブ",
+      "aliases": [
+        "Shigira Bay",
+        "Shigira Golf",
+        "シギラベイCC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Miyakojima",
+        "宮古島",
+        "上野新里",
+        "906-0202"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Miyakojima",
+      "region": "Okinawa",
+      "official_address": "〒906-0202 沖縄県宮古島市上野新里1264",
+      "local_address": "〒906-0202 沖縄県宮古島市上野新里1264",
+      "latitude": 24.730192,
+      "longitude": 125.338395,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://shigira.com/en/golf",
+      "data_source": [
+        "https://shigira.com/en/golf",
+        "https://www.okinawasportsisland.jp/wp-content/uploads/2026/02/2026_Okinawa.pdf"
+      ],
+      "coordinate_source": "https://www.fullgolf.com/en/golf-club/japan/okinawa/miyako/shigira-bay-country-club",
+      "verification_status": "partially_verified",
+      "verification_note": "官方 Shigira 網站及沖繩觀光資料核實名稱與地址；GPS 座標採用 FullGolf 公開地圖座標，尚待官方地圖交叉確認。"
+    },
+    {
+      "course_id": "jp-bel-beach",
+      "name_en": "Bel Beach Golf Club",
+      "short_name": "Bel Beach GC",
+      "local_name": "ベルビーチゴルフクラブ",
+      "aliases": [
+        "Bel Beach",
+        "ベルビーチGC"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Motobu",
+        "本部町",
+        "崎本部",
+        "905-0225"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Motobu",
+      "region": "Okinawa",
+      "official_address": "〒905-0225 沖縄県国頭郡本部町字崎本部5151",
+      "local_address": "〒905-0225 沖縄県国頭郡本部町字崎本部5151",
+      "latitude": 26.640416,
+      "longitude": 127.886964,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.belbeach.com/",
+      "data_source": [
+        "https://www.belbeach.com/",
+        "https://www.okinawasportsisland.jp/wp-content/uploads/sites/2/2021/11/resortgolfokinawa_en.pdf"
+      ],
+      "coordinate_source": "https://fullgolf.com/en/golf-course/japan/okinawa/kunigami/bel-beach",
+      "verification_status": "partially_verified",
+      "verification_note": "官方網站及沖繩觀光資料核實名稱；GPS 座標採用 FullGolf 公開地圖座標，地址與官方網站需再交叉確認。"
+    },
+    {
+      "course_id": "jp-southern-links",
+      "name_en": "The Southern Links Golf Club",
+      "short_name": "Southern Links",
+      "local_name": "ザ・サザンリンクス・ゴルフクラブ",
+      "aliases": [
+        "Southern Links Golf Club",
+        "Southern Links Resort",
+        "ザ・サザンリンクス"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Yaese",
+        "Yase",
+        "八重瀬町",
+        "玻名城",
+        "901-0513"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Yaese",
+      "region": "Okinawa",
+      "official_address": "〒901-0513 沖縄県島尻郡八重瀬町字玻名城697",
+      "local_address": "〒901-0513 沖縄県島尻郡八重瀬町字玻名城697",
+      "latitude": 26.1197,
+      "longitude": 127.7478,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.accordiagolf.com/en/grand/southernlinks/",
+      "data_source": [
+        "https://www.accordiagolf.com/en/grand/southernlinks/",
+        "https://reserve.accordiagolf.com/en/global/golfCourse/okinawa/southernlinks/access",
+        "https://www.japan.travel/en/sports/golf/courses/the-southern-links-golf-club/"
+      ],
+      "coordinate_source": "Approximate course-area coordinate; requires confirmation against official course map.",
+      "verification_status": "partially_verified",
+      "verification_note": "官方球場資料核實名稱及地址；目前座標為球場區域近似定位，尚未完成球場入口／球場中心座標核對，使用天氣預報前應再確認。"
+    },
+    {
+      "course_id": "jp-pgm-golf-resort-okinawa",
+      "name_en": "PGM Golf Resort Okinawa",
+      "short_name": "PGM Golf Resort Okinawa",
+      "local_name": "ＰＧＭゴルフリゾート沖縄",
+      "aliases": [
+        "PGM Okinawa",
+        "PGM Golf Resort",
+        "PGMゴルフリゾート沖縄"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Onna",
+        "恩納村",
+        "冨着",
+        "904-0413"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Onna",
+      "region": "Okinawa",
+      "official_address": "〒904-0413 沖縄県国頭郡恩納村字冨着1043",
+      "local_address": "〒904-0413 沖縄県国頭郡恩納村字冨着1043",
+      "latitude": 26.45532,
+      "longitude": 127.817,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.pacificgolf.co.jp/okinawa/",
+      "data_source": [
+        "https://www.pacificgolf.co.jp/okinawa/",
+        "https://www.japan.travel/en/sports/golf/courses/pgm-golf-resort-okinawa/"
+      ],
+      "coordinate_source": "OpenStreetMap/Mapcarta nearby golf-course coordinate; needs exact PGM entrance confirmation.",
+      "verification_status": "partially_verified",
+      "verification_note": "官方 PGM 球場資料確認球場地址為 〒904-0413 沖縄県国頭郡恩納村字冨着1043。現有座標與附近 Okinawa Kokusai Golf Club 地標可能混淆；暫不將其升級 verified，需取得球場本身地圖座標後再修正。"
+    },
+    {
+      "course_id": "jp-palm-hills",
+      "name_en": "Palm Hills Golf Resort Club",
+      "short_name": "Palm Hills Golf Resort",
+      "local_name": "パームヒルズゴルフリゾートクラブ",
+      "aliases": [
+        "Palm Hills Golf Resort Club",
+        "Palm Hills",
+        "パームヒルズ"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Itoman",
+        "糸満市",
+        "新垣",
+        "901-0323"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Itoman",
+      "region": "Okinawa",
+      "official_address": "〒901-0323 沖縄県糸満市字新垣762",
+      "local_address": "〒901-0323 沖縄県糸満市字新垣762",
+      "latitude": 26.11934,
+      "longitude": 127.701172,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://reserve.accordiagolf.com/en/global/golfcourse/okinawa/palmhills/",
+      "data_source": [
+        "https://reserve.accordiagolf.com/en/global/golfcourse/okinawa/palmhills/",
+        "https://reserve.accordiagolf.com/en/global/golfcourse/okinawa/palmhills/access/"
+      ],
+      "coordinate_source": "https://www.fullgolf.com/en/golf-club/japan/okinawa/itoman/palm-hills-golf-resort",
+      "verification_status": "partially_verified",
+      "verification_note": "Accordia 官方頁核實地址；FullGolf 公開球場地圖提供 26.119340, 127.701172。座標已更新，仍保留部分核實狀態。"
+    },
+    {
+      "course_id": "jp-chura-orchard",
+      "name_en": "Chura Orchard Golf Club",
+      "short_name": "Chura Orchard GC",
+      "local_name": "美らオーチャードゴルフ倶楽部",
+      "aliases": [
+        "Chura Orchard",
+        "Chura Orchard Golf",
+        "美らオーチャード"
+      ],
+      "search_keywords": [
+        "Okinawa",
+        "Onna",
+        "恩納村",
+        "安富祖",
+        "904-0402"
+      ],
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Onna",
+      "region": "Okinawa",
+      "official_address": "〒904-0402 沖縄県国頭郡恩納村字安富祖1577",
+      "local_address": "〒904-0402 沖縄県国頭郡恩納村字安富祖1577",
+      "latitude": 26.50626,
+      "longitude": 127.89572,
+      "timezone": "Asia/Tokyo",
+      "official_website": "https://www.churaorchard.jp/",
+      "data_source": [
+        "https://fullgolf.com/en/golf-club/japan/okinawa/kunigami/chura-orchard-golf-club",
+        "https://okinawasportsisland.jp/wp-content/uploads/2018/05/1012_RESORT-GOLF-OKINAWA_en.pdf"
+      ],
+      "coordinate_source": "https://mapcarta.com/W189138982",
+      "verification_status": "partially_verified",
+      "verification_note": "Mapcarta/OpenStreetMap 球場地標提供 26.506260, 127.895720；FullGolf 另有球場資料及地址。已更新座標，官方入口位置仍待確認。"
+    }
+  ]
+}
