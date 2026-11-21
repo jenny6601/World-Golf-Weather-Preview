@@ -1844,7 +1844,9 @@ function renderLongRangeRain(record){
  const mtime=monthly.time||[];
  for(let i=0;i<mtime.length;i++){
   const raw=mtime[i],date=typeof raw==="number"?new Date(raw*1000).toISOString().slice(0,10):String(raw).slice(0,10);
-  if(date<localDateKey(46)||date>localDateKey(90))continue;
+  const monthStart=date.slice(0,7)+"-01";
+  const monthEnd=new Date(Date.UTC(Number(date.slice(0,4)),Number(date.slice(5,7)),0)).toISOString().slice(0,10);
+  if(monthEnd<localDateKey(46)||monthStart>localDateKey(90))continue;
   const amount=monthly.precipitation_mean?.[i],anomaly=monthly.precipitation_anomaly?.[i];
   rows.push({period:date.slice(0,7)+"｜月",prob:null,amount:amount===null||amount===undefined||!Number.isFinite(Number(amount))?null:Number(amount),anomaly:anomaly===null||anomaly===undefined?null:Number(anomaly),source:"SEAS5｜月系集",kind:"seas5"});
  }
