@@ -96,3 +96,30 @@ JSON Schema：`data/schemas/long-range-observation.schema.json`。
 - Copernicus C3S Seasonal Forecasts（未來可選）：https://climate.copernicus.eu/seasonal-forecasts
 - CDS API setup（僅未來啟用 C3S 時需要）：https://cds.climate.copernicus.eu/en/how-to-api
 - Taiwan CWA monthly outlook dataset：https://opendata.cwa.gov.tw/dataset/forecast/F-A0013-001
+
+
+## 第二階段：自動擷取管線（初版）
+
+已在開發分支新增以下元件，供手動預覽驗證：
+
+- `scripts/fetch_long_range.py`：以球場已核實的 GPS 座標，分別呼叫 Open-Meteo Seasonal API 的 ECMWF EC46 與 SEAS5 模型；保存原始 JSON 回應，不先合併或轉換成日期分數。
+- `data/long-range/courses.example.json`：球場座標輸入範本。目前清單刻意為空，避免將未核實座標當成正式球場資料。
+- `tests/test_long_range_pipeline.py`：座標驗證、欄位檢查、原始回應保留及空清單行為測試。
+- `.github/workflows/long-range-data-preview.yml`：僅提供手動觸發；執行測試並將擷取結果以 7 天期限的 Actions artifact 保存。權限為 contents: read，不會寫回 repository，也不會觸發正式部署。
+
+### 擷取管線限制與注意事項
+
+1. API 使用 `https://seasonal-api.open-meteo.com/v1/seasonal`；EC46 擷取 46 天，SEAS5 擷取 90 天，實際可用欄位與時段以供應商回應為準。
+2. 每筆原始快照包含模型、球場座標、請求參數、HTTP 狀態、擷取時間及供應商原始 payload。
+3. 供應商 API 回應未必提供可驗證的模式初始化時間；因此不把 `retrieved_at` 冒充 `issued_at`。
+4. 本版先保存原始供應商資料，不自行推算每日降雨機率、不將異常值換算為雨天機率，也不產生 5 天行程排名。
+5. 目前範例球場清單為空，須先將 World Golf Weather 中已核實的全球球場 ID、名稱、國家代碼及 GPS 座標匯入，才會實際呼叫 API。空清單時 workflow 只產生 `no_targets_configured` manifest，不會假造資料。
+6. 本版以 Actions artifact 作為短期驗證輸出（保留 7 天）；尚未建立長期資料庫或自動更新正式網站。
+
+### 第二階段初版驗收項目
+
+- [ ] 將既有全球球場主檔安全匯入擷取目標清單，並核對座標及時區。
+- [ ] 手動執行 workflow，確認 EC46 與 SEAS5 的實際 API 回應及時間範圍。
+- [ ] 檢查各球場、各模式的成功／部分成功／失敗狀態與資料完整性。
+- [ ] 確認 artifact 僅供預覽、無 repository 寫入、無正式部署。
+- [ ] 再決定長期儲存方式及更新頻率；未完成資料品質驗證前，不啟動日期排名。
