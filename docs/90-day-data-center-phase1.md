@@ -7,18 +7,30 @@
 - 日期選擇首要目標：降低整段行程的降雨風險
 - 範圍：全球球場座標；先建立共通資料標準，再逐國接入區域官方資料
 
-本階段只建立資料來源登錄、統一資料結構、來源語意規則及品質規範；尚未建立日期排名、出國建議或自動化 API 擷取工作。
+本階段建立資料來源登錄、統一資料結構、來源語意規則及品質規範。第一階段以不需使用者自行申請帳號的 Open-Meteo 資料路線為主，不以 Copernicus CDS 帳號或 API Token 作為開發前提。日期排名、出國建議及自動化 API 擷取工作將在後續階段實作。
 
-## 資料來源分級
+## 資料來源分級與實際啟用策略
 
-1. ECMWF EC46：延伸期週尺度資料，最長約 46 天。
-2. ECMWF SEAS5：季節預報，支援週／月尺度產品；90 天規劃以月尺度趨勢為主。
-3. Copernicus C3S：多模式季節展望；透過 CDS API 取得資料，需帳號、API token、接受資料集條款，且預報必須與相同系統的 hindcast 配對。
-4. 日本 JMA：日本地區官方長期展望，僅適用其發布的區域範圍。
-5. 台灣 CWA：台灣月長期展望，僅適用台灣，不外推至海外。
-6. Open-Meteo Historical Archive：建立球場周邊歷史降雨氣候基線，不視為現場雨量觀測。
+### 第一階段主要資料來源（不需使用者申請 API Key）
+
+1. **Open-Meteo ECMWF EC46**：延伸期資料，最長約 46 天；依 API 實際提供的週／日產品與變數使用，保留原生時間尺度。
+2. **Open-Meteo ECMWF SEAS5**：季節預報，支援週／月尺度產品；90 天規劃以月尺度趨勢為主，不轉換成逐日預報。
+3. **Open-Meteo Historical Archive**：建立球場周邊歷史降雨氣候基線，不視為現場雨量觀測。
+
+### 可選的區域或交叉驗證來源（不阻擋第一階段）
+
+4. **Copernicus C3S**：未來可作為多模式季節展望交叉驗證來源。若要啟用，屆時才需要 CDS 帳號、API token 及接受資料集條款；目前不要求使用者申請，也不列為第一階段驗收條件。
+5. **日本 JMA**：日本地區官方長期展望，僅適用其發布的區域範圍；待確認可持續取得的官方資料格式後再接入。
+6. **台灣 CWA**：台灣月長期展望，僅適用台灣，不外推至海外；需金鑰時由伺服器端設定，不要求使用者提供。
 
 來源的狀態、端點、變數、更新頻率、憑證需求及限制見 `../data/long-range/sources.json`（網站路徑：`data/long-range/sources.json`）。
+
+## 90 天資料解讀方式
+
+- **第 1–16 天**：後續整合短中期逐日預報與多模式資料；以實際提供的逐日降雨資訊評估。
+- **第 17–46 天**：優先使用 EC46 可取得的延伸期產品；若來源只提供週尺度統計，評估時也只能採週尺度證據。
+- **第 47–90 天**：以 SEAS5 季節趨勢及歷史氣候基線作為日期窗口的背景風險，不宣稱能預測某一天是否下雨。
+- 5 天 4 夜、3 場球的候選日期窗口，未來應以整段行程及預定打球日的降雨風險為核心；遠期資料只能形成趨勢分數與信心等級，不得偽裝成精確逐日機率。
 
 ## 關鍵語意規則（不可違反）
 
@@ -53,19 +65,22 @@ JSON Schema：`data/schemas/long-range-observation.schema.json`。
 3. 先依球場座標、時區及來源網格做空間／時間對齊；不得把城市平均直接當成球場現場觀測。
 4. 來源資料必須標記有效、部分缺漏、未提供、過期或失敗。
 5. 多模式融合前，需統一變數定義、單位、時間窗與氣候基準。
-6. C3S 預報機率校準時，必須使用相同 originating system 的 hindcast，並記錄參考期間。
+6. C3S 若未來啟用並進行機率校準，必須使用相同 originating system 的 hindcast，並記錄參考期間。
 7. 歷史氣候基線與預報資料分開保存，避免把氣候平均當成未來預報。
 8. 憑證只放 GitHub Actions Secrets；絕不寫入前端、JSON 資料檔或公開 commit。
+9. 沒有 CDS 帳號、token 或 C3S 資料時，主要流程仍須可正常運作；不得將 C3S 標示為必要依賴。
 
-## 第一階段尚未完成／需要帳號設定
+## 第一階段不要求使用者提供的帳號或金鑰
 
-- C3S：使用者需建立 CDS 帳號、取得 API token，並對所需資料集接受使用條款；完成後才可設定 `CDS_API_TOKEN`。
-- CWA：需提供合法 API 金鑰並確認所需資料集存取權，才可設定 `CWA_API_KEY`。
-- JMA：需先確認適用目的地的官方區域產品及可持續取得的資料格式。
+- **Copernicus CDS**：第一階段不需要註冊、API token 或接受資料集條款。C3S 保留為未來可選交叉驗證來源。
+- **CWA**：只有在後續決定接入台灣官方資料時，才評估 API 金鑰與資料集權限。
+- **JMA**：先確認目的地官方區域產品及可持續取得的資料格式，再決定是否接入。
 - 目前 GitHub Pages 是靜態網站；任何需保密的 API token 只能由 GitHub Actions 或其他伺服器端擷取，不得由瀏覽器直接呼叫帶密鑰 API。
 
 ## 第一階段驗收標準
 
+- [ ] Open-Meteo EC46、SEAS5 與 Historical Archive 可作為不需使用者自行申請金鑰的主要資料路線。
+- [ ] C3S 明確標示為未來可選來源；缺少 CDS 帳號或 token 不影響主要流程。
 - [ ] 六類資料來源均有明確狀態、時間尺度及限制。
 - [ ] 共通 JSON Schema 可解析，且拒絕不合法時間解析度或欄位型態。
 - [ ] 能辨識降水量、降水異常、偏濕機率及真正降雨事件機率的差異。
@@ -77,6 +92,7 @@ JSON Schema：`data/schemas/long-range-observation.schema.json`。
 
 - ECMWF Extended Range：https://www.ecmwf.int/en/forecasts/datasets/atmospheric-model-sub-seasonal-forecast-set-vi-sub-seasonal
 - Open-Meteo Seasonal API：https://open-meteo.com/en/docs/seasonal-forecast-api
-- Copernicus C3S Seasonal Forecasts：https://climate.copernicus.eu/seasonal-forecasts
-- CDS API setup：https://cds.climate.copernicus.eu/en/how-to-api
+- Open-Meteo Historical Weather API：https://open-meteo.com/en/docs/historical-weather-api
+- Copernicus C3S Seasonal Forecasts（未來可選）：https://climate.copernicus.eu/seasonal-forecasts
+- CDS API setup（僅未來啟用 C3S 時需要）：https://cds.climate.copernicus.eu/en/how-to-api
 - Taiwan CWA monthly outlook dataset：https://opendata.cwa.gov.tw/dataset/forecast/F-A0013-001
