@@ -286,19 +286,6 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
 .long-range-controls button.active{background:#1769aa;color:#fff;border-color:#1769aa}
 .long-range-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}
 .long-range-day{min-width:0;text-align:center;background:#f1f5f9;border:1px solid #dbe4ed;border-radius:10px;padding:8px 3px}
-.long-range-day.lr-extended{background:#fff4d6!important;border-color:#edc66d!important}
-.long-range-day.lr-extended .lr-date,.long-range-day.lr-extended .lr-weekday{color:#805b12!important}
-.long-range-day.lr-extended .lr-metric b{color:#76520d!important}
-.long-range-legend{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
-.long-range-legend span{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border-radius:7px;background:#f8fafc;border:1px solid #dbe4ed;font-size:12px;color:#526477}
-.long-range-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;background:#f1f5f9;border:1px solid #dbe4ed}
-.long-range-legend .extended i{background:#fff4d6;border-color:#edc66d}
-.long-range-horizon{border:1px solid #dbe4ed;border-radius:12px;padding:14px;margin-top:14px;background:#f8fafc}
-.long-range-horizon h3{margin:0 0 6px;font-size:17px;color:#174f78}
-.long-range-horizon-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.long-range-horizon-item{background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:11px}
-.long-range-horizon-item b{display:block;margin-bottom:4px}
-@media(max-width:600px){.long-range-horizon-grid{grid-template-columns:1fr}}
 .long-range-day .lr-date{font-size:11px;color:#526477;font-weight:800;display:flex;flex-direction:column;gap:2px;line-height:1.25}.long-range-day .lr-weekday{font-size:10px;color:#64748b;font-weight:700}.long-range-day.weekend .lr-date,.long-range-day.weekend .lr-weekday{color:#d32f2f!important}
 .long-range-day .lr-icon{font-size:23px;line-height:1.5;display:flex;flex-direction:column;align-items:center;gap:2px}.long-range-day .lr-icon .daily-weather-svg{width:42px;height:42px;display:block;flex:none}
 .long-range-day .lr-temp{font-size:12px;font-weight:800;color:#172536}
@@ -316,6 +303,20 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
 .long-range-seasonal-item b{display:block;margin-bottom:4px}
 @media(max-width:600px){.long-range-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.long-range-day{padding:7px 2px}.long-range-day .lr-temp{font-size:11px}.long-range-seasonal-grid{grid-template-columns:1fr}}
 
+
+/* Monthly forecast and long-term climate layout */
+.long-range-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 14px}
+.long-range-controls button{min-width:0;padding:11px 8px;font-size:15px;font-weight:800}
+.long-range-controls button.active{background:#1769aa;color:#fff;border-color:#1769aa}
+.long-range-day-outside{background:#f8fafc!important;border:1px dashed #cbd5e1!important;opacity:.68}
+.long-term-subheading{margin:18px 0 9px;font-size:16px;color:#174b3b}
+.long-term-climate-grid,.long-term-seasonal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.long-term-stat,.long-term-seasonal-item{background:#f3f7f8;border:1px solid #dce7e8;border-radius:11px;padding:12px}
+.long-term-stat strong,.long-term-seasonal-item strong{display:block;font-size:19px;margin-top:4px}
+.long-term-stat small,.long-term-seasonal-item small{color:#64748b;font-size:12px}
+.long-term-seasonal-item{background:#f5f8f2}
+@media(max-width:520px){.long-range-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.long-term-climate-grid,.long-term-seasonal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mobile-hide-radar{display:none!important}
 </style>
 <style id="daily-forecast-styles">
 .forecast-heading-daily{background:#174f78!important}.daily-forecast-scroll{width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;touch-action:pan-x pan-y}
@@ -445,24 +446,23 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
 </section>
 <section class="card daily-forecast-card" id="dailyForecastPanel"><h3 class="forecast-heading forecast-heading-daily" id="dailyForecastHeading">⓪ 16天逐日天氣預報｜等待球場資料</h3><p class="muted" id="dailyForecastStatus">選擇球場後載入六模型逐日預報。左右連續滑動；手機畫面固定顯示約7天。</p><div class="daily-forecast-scroll" id="dailyForecastScroll" aria-label="16天逐日天氣預報，可左右滑動"><div class="daily-forecast-inner" id="dailyForecastInner"><div class="daily-forecast-placeholder">選擇球場後顯示16天逐日預報</div></div></div><div class="daily-forecast-legend"><span><i class="daily-dot daily-high"></i>最高溫</span><span><i class="daily-dot daily-low"></i>最低溫</span><span><i class="daily-dot daily-feel"></i>體感溫度</span></div></section>
 <section class="card" id="longRangeForecastPanel">
- <h3 class="forecast-heading">⑥ 三個月日期預報檢視</h3>
- <p class="muted">以查詢日期所在月份為起點，完整顯示連續三個月份。第 1～45 天依 EC46 可用資料顯示；第 46 天起至第三個月月底以淡黃色標示延伸預報區間。超出 EC46 有效範圍的日期不填入虛構的逐日天氣數值。</p>
- <div class="long-range-legend"><span><i></i>一般逐日預報區間</span><span class="extended"><i></i>第 46 天起：延伸預報／趨勢參考</span></div>
- <div class="long-range-controls" id="longRangeMonthControls" role="group" aria-label="選擇月份"></div>
- <div id="longRangeContent" hidden>
- <div id="longRangeStatus" class="muted" aria-live="polite">選擇球場後載入長期預報。</div>
- <div id="longRangeDaily" class="long-range-grid"></div>
- <div id="longRangeSeasonal" class="long-range-seasonal" hidden></div>
- <p class="muted long-range-disclaimer">注意：EC46／SEAS5 為區域尺度系集預報，僅供趨勢參考，不代表球場微氣候或精確開球時段。沒有來源的日期不顯示每日降雨機率、溫度或天氣圖示。</p>
+ <h3 class="forecast-heading">⑥ 三個月份逐日預報</h3>
+ <p class="muted">依球場當地日期顯示未來三個月份。ECMWF EC46 最多提供約46天逐日資料；超出範圍不填入推估數字，改參考下方季節趨勢。</p>
+ <div class="long-range-controls" id="longRangeMonthControls" role="group" aria-label="選擇預報月份"></div>
+ <div id="longRangeContent">
+  <div id="longRangeStatus" class="muted" aria-live="polite">選擇球場後載入三個月份預報。</div>
+  <div id="longRangeDaily" class="long-range-grid"></div>
+  <p class="muted long-range-disclaimer">逐日資料為區域尺度系集預報，未經球場微氣候偏差校正；超出EC46範圍的日期不顯示逐日天氣數值。</p>
  </div>
- <section class="long-range-horizon" id="beyondThreeMonthsPanel">
-  <h3>三個月以後｜長期展望與歷史氣候</h3>
-  <p class="muted">此區獨立於上方三個月份的日期表，避免把季節趨勢或歷史平均誤認為逐日天氣預報。</p>
-  <div class="long-range-horizon-grid">
-   <div class="long-range-horizon-item"><b>長期預報（SEAS5）</b><span class="muted">規劃顯示第 4 個月起的氣溫與降雨偏高／偏低機率，以週或月尺度呈現；不提供每日天氣圖示及精確雨量。目前尚未接入此區資料。</span></div>
-   <div class="long-range-horizon-item"><b>歷史氣候紀錄</b><span class="muted">規劃呈現同月份的歷史平均氣溫、降雨量與風況，作為旅遊季節選擇參考；與未來預報分開標示。目前尚未接入歷史統計資料。</span></div>
-  </div>
- </section>
+</section>
+<section class="card" id="longTermObservationPanel">
+ <h3 class="forecast-heading">⑦ 長期觀測與氣候趨勢</h3>
+ <p class="muted">A｜歷史氣候統計：近十年同月份的平均氣溫與平均日雨量。B｜未來季節趨勢：ECMWF季節系集預報，呈現較常年偏暖／偏冷、偏濕／偏乾。兩者均為月尺度參考，不是逐日預報。</p>
+ <div id="longTermObservationStatus" class="muted" aria-live="polite">選擇球場後載入歷史氣候與季節趨勢。</div>
+ <div id="longTermClimateStats" class="long-term-climate-grid"></div>
+ <h4 class="long-term-subheading">未來季節趨勢（最長約7個月）</h4>
+ <div id="longTermSeasonal" class="long-term-seasonal-grid"></div>
+ <p class="muted long-range-disclaimer">歷史統計使用 Open-Meteo Historical Weather；季節趨勢使用 ECMWF Seasonal Seamless。資料為大尺度網格估計，並非球場現場觀測。季節預報不確定性高，請勿用於單日開球決策。</p>
 </section>
 <section class="card"><h3 id="hourlyForecastHeading" class="forecast-heading forecast-heading-1">① 逐時天氣預報｜—（06:00–18:00）</h3><button type="button" class="secondary forecast-legend-toggle" id="forecastLegendToggle" aria-expanded="false">顯示圖示說明</button><div class="forecast-legend-panel" id="forecastLegendPanel" hidden><div class="rain-level-guide"><img src="./assets/rain-levels-original.webp?v=2" alt="五級降雨判讀圖示" loading="lazy"/></div><div class="rain-level-description" style="display:block!important;visibility:visible!important"><div class="rain-level-description-heading"><b>等級</b><b>名稱</b><b>打球建議</b></div><div class="rain-level-description-row"><b class="rain-lv lv1">1</b><strong>晴朗乾燥</strong><span>正常打球，不需雨傘</span></div><div class="rain-level-description-row"><b class="rain-lv lv2">2</b><strong>低降雨風險</strong><span>備妥輕便雨傘</span></div><div class="rain-level-description-row"><b class="rain-lv lv3">3</b><strong>零星小雨</strong><span>建議雨傘／雨衣</span></div><div class="rain-level-description-row"><b class="rain-lv lv4">4</b><strong>持續降雨</strong><span>雨衣及防水鞋</span></div><div class="rain-level-description-row"><b class="rain-lv lv5">5</b><strong>大雨／雷雨</strong><span>不建議打球</span></div></div><div class="forecast-weather-legend" id="forecastWeatherLegend"></div><div class="forecast-rainprob-legend" id="forecastRainProbLegend"></div></div><div class="muted" id="tableNote">固定列出06:00至18:00共13個時段。手機版同一畫面顯示前7項：時間、天氣、降雨機率、雨量、氣溫、體感及降雨判讀；圖示在上、數字文字在下，縮小欄距。其他風速、陣風、風向、濕度、雲量、UV及打球參考分數可在較寬螢幕查看。降雨判讀綜合降雨機率與逐時預估雨量，不以機率單獨代表雨勢。已過去但API沒有回傳的時段會標示「無資料」，不會以推測值補齊。</div><div class="tablewrap hourly-table-wrap"><table id="hourlyForecastTable"><thead><tr><th>🕒 時間</th><th>🌤️ 天氣</th><th>☔ 機率<br>%</th><th>🌧️ 雨量<br>mm</th><th>☔ 降雨判讀</th><th>🌡️ 氣溫<br>°C</th><th>🥵 體感<br>°C</th><th>風速 km/h</th><th>陣風 km/h</th><th>風向</th><th>濕度</th><th>雲量</th><th>UV</th><th>打球參考分數</th></tr></thead><tbody id="hourRows"><tr><td colspan="14">尚無資料</td></tr></tbody></table></div></section><section class="card rain-chart-card"><h3 id="rainProbabilityHeading" class="forecast-heading forecast-heading-2">② 每小時降雨機率圖（%）｜—</h3><canvas height="240" id="rainChart" width="600"></canvas><p class="muted">以系集成員逐時降雨量大於 0.1 mm 的比例估算；這是模式機率，尚非當地球場歷史校準後的真實機率。</p></section><section class="card rain-chart-card"><h3 id="rainAmountHeading" class="forecast-heading forecast-heading-3">③ 每小時預報雨量圖（mm）｜—</h3><canvas height="240" id="rainAmountChart" width="600"></canvas><p class="muted">顯示六模型逐時雨量；歷史回測權重啟用後採加權融合；模式範圍另作不確定性參考。</p></section>
 <section class="card">
@@ -1728,7 +1728,6 @@ let amountWeights=null,probabilityWeights=null,weightingLabel="等權中位數�
  $("courseAutoStatus").textContent=`${p.name}｜${date}｜座標 ${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}｜${forecastSource}${modelErrors.length?"；部分模型失敗，詳見 API 診斷":""}`;
  loadAndRenderDailyForecast(p);
  loadLongRangeForecast(p);
- loadRadar(p.lat,p.lon);
  loadV28ProviderCache(p.name,date);
  if(!forceRefresh&&cacheAgeMinutes!==null&&cacheAgeMinutes>180&&cacheAgeMinutes<=720&&Object.keys(cachedCourseModels(cacheCandidate,p.name,date)).length){
   $("status").textContent="舊快取已先顯示｜正在背景更新六組即時模型…";
@@ -1736,82 +1735,90 @@ let amountWeights=null,probabilityWeights=null,weightingLabel="等權中位數�
  }
 }
 
-// Long-range forecast: three calendar months anchored to the selected query date.
-let longRangeMonthOffset=0,longRangeCache=new Map(),longRangeSelectedCourse="",longRangeAnchorMonth="";
+// Three calendar months of daily EC46 forecast + separate historical climate and seasonal tendency.
+let longRangeCache=new Map(),longRangeSelectedCourse="",longRangeSelectedMonth=0,longTermCache=new Map();
 const longRangeWeatherLabel=code=>{const n=Number(code);if(n===0)return "晴";if(n===1||n===2)return "晴時多雲";if(n===3)return "多雲";if(n===45||n===48)return "霧";if([51,53,55,56,57].includes(n))return "毛毛雨";if([61,63,65,66,67,80,81,82].includes(n))return "降雨";if([95,96,99].includes(n))return "雷雨";return "—";};
 const longRangeWeatherEmoji=code=>{const item=dailyWx(code);return item.icon||"—";};
-function getLongRangeAnchorDate(){
- const selected=$("courseDate")?.value;
- if(selected&&/^\d{4}-\d{2}-\d{2}$/.test(selected))return selected;
- return new Date().toLocaleDateString("sv-SE",{timeZone:currentCourseTimezone||"Asia/Tokyo"});
+function longRangeMonthDates(){
+ const now=new Date(),base=new Date(now.toLocaleString("en-US",{timeZone:currentCourseTimezone||"Asia/Tokyo"}));
+ return [0,1,2].map(offset=>{const d=new Date(base.getFullYear(),base.getMonth()+offset,1);return {year:d.getFullYear(),month:d.getMonth()+1,label:new Intl.DateTimeFormat("zh-TW",{timeZone:currentCourseTimezone||"Asia/Tokyo",month:"long"}).format(d),key:d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")};});
 }
-function renderLongRangeMonthControls(){
- const host=$("longRangeMonthControls");if(!host)return;
- const anchor=getLongRangeAnchorDate(),base=new Date(anchor+"T12:00:00Z");
- longRangeAnchorMonth=anchor.slice(0,7);
- const labels=[];
- for(let offset=0;offset<3;offset++){
-  const d=new Date(Date.UTC(base.getUTCFullYear(),base.getUTCMonth()+offset,1));
-  labels.push({offset,key:d.toISOString().slice(0,7),label:d.getUTCFullYear()+"年"+(d.getUTCMonth()+1)+"月"});
- }
- host.innerHTML=labels.map(x=>'<button type="button" class="secondary long-range-month'+(x.offset===longRangeMonthOffset?" active":"")+'" data-month-offset="'+x.offset+'" aria-pressed="'+(x.offset===longRangeMonthOffset?'true':'false')+'">'+x.label+'</button>').join("");
- host.querySelectorAll(".long-range-month").forEach(btn=>btn.addEventListener("click",()=>{
-  longRangeMonthOffset=Number(btn.dataset.monthOffset);
-  host.querySelectorAll(".long-range-month").forEach(b=>{const on=b===btn;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
-  const content=$("longRangeContent");if(content)content.hidden=false;
-  renderLongRangeForecast();
- }));
+function renderLongRangeMonthButtons(){
+ const root=$("longRangeMonthControls");if(!root)return;
+ const months=longRangeMonthDates();
+ root.innerHTML=months.map((m,i)=>'<button type="button" class="secondary long-range-range'+(i===longRangeSelectedMonth?" active":"")+'" data-month-index="'+i+'" aria-pressed="'+(i===longRangeSelectedMonth)+'">'+m.label+'</button>').join("");
+ root.querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{longRangeSelectedMonth=Number(btn.dataset.monthIndex);renderLongRangeMonthButtons();renderLongRangeForecast();const climate=longTermCache.get(longRangeSelectedCourse);if(climate)renderLongTermObservation(climate);}));
 }
 async function loadLongRangeForecast(course){
- const status=$("longRangeStatus"),daily=$("longRangeDaily"),seasonal=$("longRangeSeasonal");
+ const status=$("longRangeStatus"),daily=$("longRangeDaily");
  if(!course||!Number.isFinite(Number(course.lat))||!Number.isFinite(Number(course.lon))||!currentCourseTimezone){status.textContent="球場座標或時區尚未核實，無法載入長期預報。";return;}
- const key=[course.name,course.lat,course.lon,currentCourseTimezone].join("|");
- const anchor=getLongRangeAnchorDate();
- if(anchor.slice(0,7)!==longRangeAnchorMonth){longRangeMonthOffset=0;renderLongRangeMonthControls();}
- longRangeSelectedCourse=key;
- if(longRangeCache.has(key)){renderLongRangeForecast();return;}
- status.textContent="正在取得 EC46 長期預報及前 16 天降雨機率…";daily.innerHTML="";seasonal.hidden=true;seasonal.innerHTML="";
+ const key=[course.name,course.lat,course.lon,currentCourseTimezone].join("|");longRangeSelectedCourse=key;
+ renderLongRangeMonthButtons();
+ if(longRangeCache.has(key)){renderLongRangeForecast();loadLongTermObservation(course,key);return;}
+ status.textContent="正在取得EC46逐日預報…";daily.innerHTML="";
  try{
   const q=new URLSearchParams({latitude:String(course.lat),longitude:String(course.lon),daily:"temperature_2m_max,temperature_2m_min,precipitation_sum,weather_code",timezone:currentCourseTimezone,forecast_days:"46",models:"ecmwf_ec46"});
-  const response=await fetchWithRetry("https://seasonal-api.open-meteo.com/v1/forecast?"+q.toString(),{}, "ECMWF EC46 長期預報",20000);
-  const data=await response.json();
-  if(!data.daily||!Array.isArray(data.daily.time)||!data.daily.time.length)throw Error("EC46 未回傳逐日資料");
-  const record={daily:data.daily,probability:{},timezone:currentCourseTimezone,lat:Number(course.lat),lon:Number(course.lon),courseName:course.name,loadedAt:Date.now()};
-  longRangeCache.set(key,record);
-  // Open-Meteo 標準預報提供逐日降雨機率；其有效天數依 API 可用預報範圍，不延伸假造至 46/60 天。
-  try{
-   const pq=new URLSearchParams({latitude:String(course.lat),longitude:String(course.lon),daily:"precipitation_probability_max",timezone:currentCourseTimezone,forecast_days:"16"});
-   const pr=await fetchWithRetry("https://api.open-meteo.com/v1/forecast?"+pq.toString(),{}, "前 16 天降雨機率",18000);
-   const pd=await pr.json();
-   if(Array.isArray(pd.daily?.time)&&Array.isArray(pd.daily?.precipitation_probability_max)){
-    pd.daily.time.forEach((date,i)=>{const value=pd.daily.precipitation_probability_max[i];if(value!==null&&value!==undefined&&Number.isFinite(Number(value)))record.probability[date]=Number(value);});
-   }
-  }catch(probError){console.warn("Long-range precipitation probability unavailable:",probError);}
-  status.textContent="EC46 已取得 "+data.daily.time.length+" 天逐日資料；降雨機率僅顯示有來源的日期。";
-  renderLongRangeForecast();
- }catch(e){status.textContent="長期逐日預報暫時無法取得："+e.message;daily.innerHTML="";}
+  const response=await fetchWithRetry("https://seasonal-api.open-meteo.com/v1/forecast?"+q.toString(),{}, "ECMWF EC46 逐日預報",20000);
+  const data=await response.json();if(!data.daily||!Array.isArray(data.daily.time)||!data.daily.time.length)throw Error("EC46 未回傳逐日資料");
+  const record={daily:data.daily,shortRange:{},timezone:currentCourseTimezone,lat:Number(course.lat),lon:Number(course.lon),courseName:course.name,loadedAt:Date.now()};
+  try{const rows=await fetchDailyForecast(course.lat,course.lon,currentCourseTimezone);record.shortRange=Object.fromEntries(rows.slice(0,15).map(row=>[row.date,{prob:row.prob,rain:row.rain}]));}catch(e){console.warn("前15天白天降雨資料暫不可用",e);}
+  longRangeCache.set(key,record);renderLongRangeForecast();
+  status.textContent="ECMWF EC46 已取得 "+data.daily.time.length+" 天逐日資料；其他日期不以逐日預報數值填補。";
+ }catch(e){status.textContent="逐日預報暫時無法取得："+e.message;daily.innerHTML="";}
+ loadLongTermObservation(course,key);
 }
 function renderLongRangeForecast(){
  const record=longRangeCache.get(longRangeSelectedCourse);if(!record)return;
- const daily=$("longRangeDaily"),status=$("longRangeStatus"),seasonal=$("longRangeSeasonal");
- const d=record.daily,fmt=v=>v===null||v===undefined||!Number.isFinite(Number(v))?"—":Number(v).toFixed(0);
- const anchor=new Date(getLongRangeAnchorDate()+"T12:00:00Z");
- const month=new Date(Date.UTC(anchor.getUTCFullYear(),anchor.getUTCMonth()+longRangeMonthOffset,1));
- const year=month.getUTCFullYear(),monthIndex=month.getUTCMonth(),daysInMonth=new Date(Date.UTC(year,monthIndex+1,0)).getUTCDate();
- const dataByDate=Object.fromEntries(d.time.map((date,i)=>[date,i]));
- const dates=Array.from({length:daysInMonth},(_,i)=>year+"-"+String(monthIndex+1).padStart(2,"0")+"-"+String(i+1).padStart(2,"0"));
- const available=dates.filter(date=>Object.prototype.hasOwnProperty.call(dataByDate,date)).length;
- daily.innerHTML=dates.map((date)=>{
-  const i=dataByDate[date],hasDaily=i!==undefined,code=hasDaily?d.weather_code?.[i]:null,rain=hasDaily?d.precipitation_sum?.[i]:null,hi=hasDaily?d.temperature_2m_max?.[i]:null,lo=hasDaily?d.temperature_2m_min?.[i]:null,prob=hasDaily?record.probability?.[date]:undefined;
-  const label=hasDaily?longRangeWeatherLabel(code):"超出預報範圍",dateObj=new Date(date+"T12:00:00Z"),weekday=dateObj.getUTCDay(),weekend=weekday===0||weekday===6,weekdayText=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"][weekday];
-  const dayOffset=Math.floor((Date.UTC(dateObj.getUTCFullYear(),dateObj.getUTCMonth(),dateObj.getUTCDate())-Date.UTC(anchor.getUTCFullYear(),anchor.getUTCMonth(),anchor.getUTCDate()))/86400000);
-  const extended=dayOffset>=45;
-  return '<div class="long-range-day'+(hasDaily?"":" long-range-unavailable")+(extended?" lr-extended":"")+(weekend?" weekend":"")+'" data-date="'+date+'" data-day-offset="'+dayOffset+'" data-weekday="'+weekday+'"><div class="lr-date"><span>'+date.slice(5).replace("-","/")+'</span><span class="lr-weekday">'+weekdayText+'</span></div><div class="lr-icon" title="'+label+'">'+(hasDaily?longRangeWeatherEmoji(code):"—")+'<small class="lr-desc">'+label+'</small></div><div class="lr-metric"><span>氣溫</span><b>'+(hasDaily?fmt(hi)+'° / '+fmt(lo)+'°':"—")+'</b></div><div class="lr-metric"><span>降雨機率</span><b>'+(prob===undefined?"—":Math.round(prob)+"%")+'</b></div><div class="lr-metric"><span>雨量</span><b>'+(rain===null||rain===undefined?"—":Number(rain).toFixed(1)+" mm")+'</b></div></div>';
+ const daily=$("longRangeDaily"),status=$("longRangeStatus"),d=record.daily,month=longRangeMonthDates()[longRangeSelectedMonth];
+ const fmt=v=>v===null||v===undefined||!Number.isFinite(Number(v))?"—":Number(v).toFixed(0);
+ const monthDates=[];const days=new Date(month.year,month.month,0).getDate();
+ for(let day=1;day<=days;day++)monthDates.push(month.key+"-"+String(day).padStart(2,"0"));
+ const indexByDate=new Map(d.time.map((date,i)=>[date,i]));
+ daily.innerHTML=monthDates.map(date=>{
+  const i=indexByDate.get(date),hasDaily=i!==undefined,code=hasDaily?d.weather_code?.[i]:null,short=record.shortRange?.[date],rain=hasDaily?(short?.rain??d.precipitation_sum?.[i]??null):null,prob=short?.prob;
+  const hi=hasDaily?d.temperature_2m_max?.[i]:null,lo=hasDaily?d.temperature_2m_min?.[i]:null,label=hasDaily?longRangeWeatherLabel(code):"逐日資料未涵蓋";
+  const dt=new Date(date+"T12:00:00Z"),weekday=dt.getUTCDay(),weekend=weekday===0||weekday===6,weekdayText=["日","一","二","三","四","五","六"][weekday];
+  return '<div class="long-range-day'+(hasDaily?"":" long-range-day-outside")+(weekend?" weekend":"")+'"><div class="lr-date"><span>'+date.slice(5).replace("-","/")+'</span><span class="lr-weekday">週'+weekdayText+'</span></div><div class="lr-icon">'+(hasDaily?longRangeWeatherEmoji(code):"—")+'<small class="lr-desc">'+label+'</small></div><div class="lr-metric"><span>氣溫</span><b>'+(hasDaily?fmt(hi)+'° / '+fmt(lo)+'°':"—")+'</b></div><div class="lr-metric"><span>降雨機率</span><b>'+(prob===undefined?"—":Math.round(prob)+"%")+'</b></div><div class="lr-metric"><span>雨量</span><b>'+(rain===null||rain===undefined?"—":Number(rain).toFixed(1)+" mm")+'</b></div></div>';
  }).join("");
- status.textContent="ECMWF EC46｜本月共 "+dates.length+" 天，其中 "+available+" 天有可用逐日預報；淡黃色自查詢日起第 46 天開始，延續至第三個月月底。超出預報範圍的日期不提供推估數值。";
- seasonal.hidden=true;seasonal.innerHTML="";
+ const available=monthDates.filter(date=>indexByDate.has(date)).length;
+ status.textContent=month.year+"年"+month.month+"月｜ECMWF EC46逐日資料涵蓋 "+available+"/"+days+" 天；未涵蓋日期不顯示推估值。";
 }
-
+async function loadLongTermObservation(course,key){
+ const status=$("longTermObservationStatus"),stats=$("longTermClimateStats"),seasonal=$("longTermSeasonal");
+ if(!status||!stats||!seasonal)return;
+ if(longTermCache.has(key)){renderLongTermObservation(longTermCache.get(key));return;}
+ status.textContent="正在載入近十年歷史氣候統計與未來季節趨勢…";stats.innerHTML="";seasonal.innerHTML="";
+ const now=new Date(),endYear=now.getFullYear()-1,startYear=endYear-9;
+ const startDate=startYear+"-01-01",endDate=endYear+"-12-31";
+ const archiveURL="https://archive-api.open-meteo.com/v1/archive?"+new URLSearchParams({latitude:String(course.lat),longitude:String(course.lon),start_date:startDate,end_date:endDate,daily:"temperature_2m_mean,precipitation_sum",timezone:currentCourseTimezone});
+ const seasonalURL="https://seasonal-api.open-meteo.com/v1/seasonal?"+new URLSearchParams({latitude:String(course.lat),longitude:String(course.lon),monthly:"temperature_2m_mean,temperature_2m_anomaly,precipitation_mean,precipitation_anomaly",timezone:currentCourseTimezone,forecast_days:"217",models:"ecmwf_seasonal_seamless"});
+ const [a,b]=await Promise.allSettled([fetchWithRetry(archiveURL,{},"近十年歷史氣候",25000).then(r=>r.json()),fetchWithRetry(seasonalURL,{},"ECMWF季節趨勢",25000).then(r=>r.json())]);
+ const record={history:null,seasonal:null,startYear,endYear};
+ if(a.status==="fulfilled"&&Array.isArray(a.value.daily?.time))record.history=a.value.daily;
+ if(b.status==="fulfilled"&&Array.isArray(b.value.monthly?.time))record.seasonal=b.value.monthly;
+ longTermCache.set(key,record);renderLongTermObservation(record);
+}
+function renderLongTermObservation(record){
+ const status=$("longTermObservationStatus"),stats=$("longTermClimateStats"),seasonal=$("longTermSeasonal");
+ const month=longRangeMonthDates()[longRangeSelectedMonth],monthNo=month.month;
+ if(record.history){
+  const h=record.history,rows=h.time.map((date,i)=>({date,temp:h.temperature_2m_mean?.[i],rain:h.precipitation_sum?.[i]})).filter(x=>Number(x.date.slice(5,7))===monthNo);
+  const avg=key=>{const vals=rows.map(x=>x[key]).filter(v=>v!==null&&v!==undefined&&Number.isFinite(Number(v))).map(Number);return vals.length?vals.reduce((x,y)=>x+y,0)/vals.length:null;};
+  const rainDays=rows.filter(x=>Number(x.rain)>=1).length;
+  stats.innerHTML='<div class="long-term-stat"><small>近十年同月份平均氣溫</small><strong>'+(avg("temp")===null?"—":avg("temp").toFixed(1)+" °C")+'</strong><small>'+record.startYear+"–"+record.endYear+'</small></div><div class="long-term-stat"><small>近十年同月份平均日雨量</small><strong>'+(avg("rain")===null?"—":avg("rain").toFixed(1)+" mm")+'</strong><small>以歷史逐日雨量平均</small></div><div class="long-term-stat"><small>近十年同月份降雨日數</small><strong>'+(rows.length? (rainDays/10).toFixed(1)+" 天／年":"—")+'</strong><small>每日雨量 ≥ 1 mm</small></div><div class="long-term-stat"><small>歷史資料筆數</small><strong>'+rows.length+'</strong><small>十年同月份每日資料</small></div>';
+ }else{stats.innerHTML='<div class="long-term-stat">歷史氣候資料暫時無法取得。</div>';}
+ if(record.seasonal){
+  const m=record.seasonal,items=m.time.map((date,i)=>({date,temp:m.temperature_2m_mean?.[i],tempAnom:m.temperature_2m_anomaly?.[i],rain:m.precipitation_mean?.[i],rainAnom:m.precipitation_anomaly?.[i]})).slice(0,7);
+  seasonal.innerHTML=items.map(x=>{
+   const label=x.date.slice(0,7),tempText=x.tempAnom===null||x.tempAnom===undefined?"溫度距平未提供":(Number(x.tempAnom)>0.5?"偏暖":Number(x.tempAnom)<-0.5?"偏涼":"接近常年")+"（"+(Number(x.tempAnom)>0?"+":"")+Number(x.tempAnom).toFixed(1)+"°C）";
+   const rainText=x.rainAnom===null||x.rainAnom===undefined?"降水距平未提供":(Number(x.rainAnom)>10?"偏濕":Number(x.rainAnom)<-10?"偏乾":"接近常年")+"（"+(Number(x.rainAnom)>0?"+":"")+Number(x.rainAnom).toFixed(1)+" mm）";
+   return '<div class="long-term-seasonal-item"><small>'+label+'｜季節系集</small><strong>'+tempText+'</strong><small>'+rainText+'</small><small>月均溫 '+(x.temp===null||x.temp===undefined?"—":Number(x.temp).toFixed(1)+" °C")+'｜月均降水 '+(x.rain===null||x.rain===undefined?"—":Number(x.rain).toFixed(1)+" mm")+'</small></div>';
+  }).join("");
+ }else{seasonal.innerHTML='<div class="long-term-seasonal-item">季節預報資料暫時無法取得。</div>';}
+ const historyText=record.history?"歷史氣候 "+record.startYear+"–"+record.endYear:"歷史氣候暫缺";
+ const seasonalText=record.seasonal?"ECMWF季節趨勢已載入":"季節趨勢暫缺";
+ status.textContent=month.year+"年"+month.month+"月｜"+historyText+"｜"+seasonalText+"。";
+}
 async function loadRadar(lat,lon){try{let d=await fetch("https://api.rainviewer.com/public/weather-maps.json").then(r=>r.json());let frames=d.radar?.past||[];if(!frames.length)throw Error("目前沒有雷達影像");let f=frames[frames.length-1];$("radarImg").src=`${d.host}${f.path}/256/7/${lat}/${lon}/2/1_1.png`;$("radarStatus").textContent="雷達影像時間："+new Date(f.time*1000).toLocaleString("zh-TW")+"｜Weather data by RainViewer";}catch(e){$("radarStatus").textContent="雷達影像暫時無法載入："+e.message}}
 
 $("cwaBtn").addEventListener("click",async()=>{let key=$("cwaKey").value.trim();if(!key){$("cwaStatus").textContent="請先輸入 CWA API 授權碼。";return}if(!active.lat){$("cwaStatus").textContent="請先搜尋球場。";return}$("cwaStatus").textContent="正在查詢 CWA 宜蘭縣鄉鎮預報…";try{let url="https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-001?Authorization="+encodeURIComponent(key)+"&format=JSON";let d=await fetch(url).then(r=>{if(!r.ok)throw Error("HTTP "+r.status+"；可能是授權碼、跨域或服務問題");return r.json()});let locs=d.records?.locations?.[0]?.location||[];let match=locs.find(x=>x.locationName?.includes("礁溪"))||locs.find(x=>x.locationName?.includes("宜蘭"));if(!match)throw Error("回傳資料中找不到礁溪鄉，請檢查API資料集。");let summary=(match.weatherElement||[]).slice(0,8).map(e=>{let t=e.time?.[0],v=t?.elementValue?.map(z=>z.value).join(" / ")||"—";return `<div><b>${e.elementName}</b>：${v}</div>`}).join("");$("cwaResult").innerHTML=`<b>${match.locationName}｜最近預報時段摘要</b>${summary}`;$("cwaStatus").textContent="CWA資料取得成功。注意此鄉鎮預報時段不一定是逐小時資料。"}catch(e){$("cwaStatus").textContent="CWA查詢失敗："+e.message+"。可先使用其他模型；若為跨域限制，需由伺服器代理呼叫。"}});
