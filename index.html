@@ -1740,8 +1740,14 @@ let longRangeCache=new Map(),longRangeSelectedCourse="",longRangeSelectedMonth=0
 const longRangeWeatherLabel=code=>{const n=Number(code);if(n===0)return "晴";if(n===1||n===2)return "晴時多雲";if(n===3)return "多雲";if(n===45||n===48)return "霧";if([51,53,55,56,57].includes(n))return "毛毛雨";if([61,63,65,66,67,80,81,82].includes(n))return "降雨";if([95,96,99].includes(n))return "雷雨";return "—";};
 const longRangeWeatherEmoji=code=>{const item=dailyWx(code);return item.icon||"—";};
 function longRangeMonthDates(){
- const now=new Date(),base=new Date(now.toLocaleString("en-US",{timeZone:currentCourseTimezone||"Asia/Tokyo"}));
- return [0,1,2].map(offset=>{const d=new Date(base.getFullYear(),base.getMonth()+offset,1);return {year:d.getFullYear(),month:d.getMonth()+1,label:new Intl.DateTimeFormat("zh-TW",{timeZone:currentCourseTimezone||"Asia/Tokyo",month:"long"}).format(d),key:d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")};});
+ const zone=currentCourseTimezone||"Asia/Taipei";
+ const parts=new Intl.DateTimeFormat("en-US",{timeZone:zone,year:"numeric",month:"numeric"}).formatToParts(new Date());
+ const year=Number(parts.find(x=>x.type==="year")?.value),month=Number(parts.find(x=>x.type==="month")?.value);
+ return [0,1,2].map(offset=>{
+  const d=new Date(Date.UTC(year,month-1+offset,15));
+  const y=d.getUTCFullYear(),m=d.getUTCMonth()+1;
+  return {year:y,month:m,label:m+"月",key:y+"-"+String(m).padStart(2,"0")};
+ });
 }
 function renderLongRangeMonthButtons(){
  const root=$("longRangeMonthControls");if(!root)return;
