@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Golf Weather Long-range Forecast Observation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "observation_id",
+    "source_id",
+    "provider",
+    "model",
+    "location",
+    "time_window",
+    "temporal_resolution",
+    "issued_at",
+    "retrieved_at",
+    "variables",
+    "quality"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "observation_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "latitude",
+        "longitude",
+        "timezone"
+      ],
+      "properties": {
+        "course_id": {
+          "type": "string"
+        },
+        "course_name": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "latitude": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "time_window": {
+      "type": "object",
+      "required": [
+        "start_date",
+        "end_date",
+        "lead_day_start",
+        "lead_day_end"
+      ],
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "lead_day_start": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lead_day_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "temporal_resolution": {
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "seasonal_3_month"
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_time_label": {
+      "type": "string"
+    },
+    "climatology_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ensemble_size": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "variables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "value",
+          "unit",
+          "statistic_type",
+          "semantic"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "statistic_type": {
+            "enum": [
+              "mean",
+              "sum",
+              "anomaly",
+              "probability",
+              "tercile_probability",
+              "efi",
+              "sot",
+              "category"
+            ]
+          },
+          "semantic": {
+            "type": "string"
+          },
+          "threshold": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lower_bound": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "upper_bound": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quality": {
+      "type": "object",
+      "required": [
+        "status",
+        "missing_fields",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "valid",
+            "partial",
+            "unavailable",
+            "stale",
+            "failed"
+          ]
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "grid_elevation_m": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "course_elevation_m": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_payload_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "license_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
