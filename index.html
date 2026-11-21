@@ -433,11 +433,8 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
 <section class="card daily-forecast-card" id="dailyForecastPanel"><h3 class="forecast-heading forecast-heading-daily" id="dailyForecastHeading">⓪ 16天逐日天氣預報｜等待球場資料</h3><p class="muted" id="dailyForecastStatus">選擇球場後載入六模型逐日預報。左右連續滑動；手機畫面固定顯示約7天。</p><div class="daily-forecast-scroll" id="dailyForecastScroll" aria-label="16天逐日天氣預報，可左右滑動"><div class="daily-forecast-inner" id="dailyForecastInner"><div class="daily-forecast-placeholder">選擇球場後顯示16天逐日預報</div></div></div><div class="daily-forecast-legend"><span><i class="daily-dot daily-high"></i>最高溫</span><span><i class="daily-dot daily-low"></i>最低溫</span><span><i class="daily-dot daily-feel"></i>體感溫度</span></div></section>
 <section class="card" id="longRangeForecastPanel">
  <h3 class="forecast-heading">⑥ 長期逐日天氣預報</h3>
- <p class="muted">ECMWF EC46 系集延伸預報。僅顯示天氣狀況、最高／最低氣溫、降雨機率及每日雨量。第 47–60 天不提供可靠的逐日四項預報。</p>
- <div class="long-range-controls" role="group" aria-label="長期預報天數">
-  <button type="button" class="secondary long-range-range active" data-days="30" aria-pressed="true">30 天</button>
-  <button type="button" class="secondary long-range-range" data-days="60" aria-pressed="false">60 天</button>
- </div>
+ <p class="muted">以查詢日期所在月份為起點，提供連續三個月份的日期檢視。ECMWF EC46 僅在其有效預報範圍內提供逐日數值；超出範圍的日期只保留日期，不推估天氣。</p>
+ <div class="long-range-controls" id="longRangeMonthControls" role="group" aria-label="選擇月份"></div>
  <div id="longRangeContent" hidden>
  <div id="longRangeStatus" class="muted" aria-live="polite">選擇球場後載入長期預報。</div>
  <div id="longRangeDaily" class="long-range-grid"></div>
@@ -1717,15 +1714,38 @@ let amountWeights=null,probabilityWeights=null,weightingLabel="等權中位數�
  }
 }
 
-// Long-range forecast: EC46 daily outlook (up to 46 days) plus SEAS5 monthly tendency.
-let longRangeDays=30,longRangeCache=new Map(),longRangeSelectedCourse="";
+// Long-range forecast: three calendar months anchored to the selected query date.
+let longRangeMonthOffset=0,longRangeCache=new Map(),longRangeSelectedCourse="",longRangeAnchorMonth="";
 const longRangeWeatherLabel=code=>{const n=Number(code);if(n===0)return "晴";if(n===1||n===2)return "晴時多雲";if(n===3)return "多雲";if(n===45||n===48)return "霧";if([51,53,55,56,57].includes(n))return "毛毛雨";if([61,63,65,66,67,80,81,82].includes(n))return "降雨";if([95,96,99].includes(n))return "雷雨";return "—";};
 const longRangeWeatherEmoji=code=>{const item=dailyWx(code);return item.icon||"—";};
-document.querySelectorAll(".long-range-range").forEach(btn=>btn.addEventListener("click",()=>{longRangeDays=Number(btn.dataset.days);const content=$("longRangeContent");if(content)content.hidden=false;document.querySelectorAll(".long-range-range").forEach(b=>{const on=b===btn;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});renderLongRangeForecast();}));
+function getLongRangeAnchorDate(){
+ const selected=$("courseDate")?.value;
+ if(selected&&/^\\d{4}-\\d{2}-\\d{2}$/.test(selected))return selected;
+ return new Date().toLocaleDateString("sv-SE",{timeZone:currentCourseTimezone||"Asia/Tokyo"});
+}
+function renderLongRangeMonthControls(){
+ const host=$("longRangeMonthControls");if(!host)return;
+ const anchor=getLongRangeAnchorDate(),base=new Date(anchor+"T12:00:00Z");
+ longRangeAnchorMonth=anchor.slice(0,7);
+ const labels=[];
+ for(let offset=0;offset<3;offset++){
+  const d=new Date(Date.UTC(base.getUTCFullYear(),base.getUTCMonth()+offset,1));
+  labels.push({offset,key:d.toISOString().slice(0,7),label:d.getUTCFullYear()+"年"+(d.getUTCMonth()+1)+"月"});
+ }
+ host.innerHTML=labels.map(x=>'<button type="button" class="secondary long-range-month'+(x.offset===longRangeMonthOffset?" active":"")+'" data-month-offset="'+x.offset+'" aria-pressed="'+(x.offset===longRangeMonthOffset?'true':'false')+'">'+x.label+'</button>').join("");
+ host.querySelectorAll(".long-range-month").forEach(btn=>btn.addEventListener("click",()=>{
+  longRangeMonthOffset=Number(btn.dataset.monthOffset);
+  host.querySelectorAll(".long-range-month").forEach(b=>{const on=b===btn;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
+  const content=$("longRangeContent");if(content)content.hidden=false;
+  renderLongRangeForecast();
+ }));
+}
 async function loadLongRangeForecast(course){
  const status=$("longRangeStatus"),daily=$("longRangeDaily"),seasonal=$("longRangeSeasonal");
  if(!course||!Number.isFinite(Number(course.lat))||!Number.isFinite(Number(course.lon))||!currentCourseTimezone){status.textContent="球場座標或時區尚未核實，無法載入長期預報。";return;}
  const key=[course.name,course.lat,course.lon,currentCourseTimezone].join("|");
+ const anchor=getLongRangeAnchorDate();
+ if(anchor.slice(0,7)!==longRangeAnchorMonth){longRangeMonthOffset=0;renderLongRangeMonthControls();}
  longRangeSelectedCourse=key;
  if(longRangeCache.has(key)){renderLongRangeForecast();return;}
  status.textContent="正在取得 EC46 長期預報及前 16 天降雨機率…";daily.innerHTML="";seasonal.hidden=true;seasonal.innerHTML="";
@@ -1752,15 +1772,19 @@ async function loadLongRangeForecast(course){
 function renderLongRangeForecast(){
  const record=longRangeCache.get(longRangeSelectedCourse);if(!record)return;
  const daily=$("longRangeDaily"),status=$("longRangeStatus"),seasonal=$("longRangeSeasonal");
- const d=record.daily,limit=longRangeDays,available=Math.min(limit,d.time.length),fmt=v=>v===null||v===undefined||!Number.isFinite(Number(v))?"—":Number(v).toFixed(0);
- const dates=d.time.slice(0,available);
- if(limit>available){const last=dates.length?new Date(dates[dates.length-1]+"T12:00:00Z"):new Date();for(let i=available;i<limit;i++){const next=new Date(last.getTime()+(i-available+1)*86400000);dates.push(next.toISOString().slice(0,10));}}
- daily.innerHTML=dates.map((date,i)=>{
-  const hasDaily=i<available,code=hasDaily?d.weather_code?.[i]:null,rain=hasDaily?d.precipitation_sum?.[i]:null,hi=hasDaily?d.temperature_2m_max?.[i]:null,lo=hasDaily?d.temperature_2m_min?.[i]:null,prob=hasDaily?record.probability?.[date]:undefined;
+ const d=record.daily,fmt=v=>v===null||v===undefined||!Number.isFinite(Number(v))?"—":Number(v).toFixed(0);
+ const anchor=new Date(getLongRangeAnchorDate()+"T12:00:00Z");
+ const month=new Date(Date.UTC(anchor.getUTCFullYear(),anchor.getUTCMonth()+longRangeMonthOffset,1));
+ const year=month.getUTCFullYear(),monthIndex=month.getUTCMonth(),daysInMonth=new Date(Date.UTC(year,monthIndex+1,0)).getUTCDate();
+ const dataByDate=Object.fromEntries(d.time.map((date,i)=>[date,i]));
+ const dates=Array.from({length:daysInMonth},(_,i)=>year+"-"+String(monthIndex+1).padStart(2,"0")+"-"+String(i+1).padStart(2,"0"));
+ const available=dates.filter(date=>Object.prototype.hasOwnProperty.call(dataByDate,date)).length;
+ daily.innerHTML=dates.map((date)=>{
+  const i=dataByDate[date],hasDaily=i!==undefined,code=hasDaily?d.weather_code?.[i]:null,rain=hasDaily?d.precipitation_sum?.[i]:null,hi=hasDaily?d.temperature_2m_max?.[i]:null,lo=hasDaily?d.temperature_2m_min?.[i]:null,prob=hasDaily?record.probability?.[date]:undefined;
   const label=hasDaily?longRangeWeatherLabel(code):"超出預報範圍",dateObj=new Date(date+"T12:00:00Z"),weekday=dateObj.getUTCDay(),weekend=weekday===0||weekday===6,weekdayText=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"][weekday];
   return '<div class="long-range-day'+(hasDaily?"":" long-range-unavailable")+(weekend?" weekend":"")+'" data-date="'+date+'" data-weekday="'+weekday+'"><div class="lr-date"><span>'+date.slice(5).replace("-","/")+'</span><span class="lr-weekday">'+weekdayText+'</span></div><div class="lr-icon" title="'+label+'">'+(hasDaily?longRangeWeatherEmoji(code):"—")+'<small class="lr-desc">'+label+'</small></div><div class="lr-metric"><span>氣溫</span><b>'+(hasDaily?fmt(hi)+'° / '+fmt(lo)+'°':"—")+'</b></div><div class="lr-metric"><span>降雨機率</span><b>'+(prob===undefined?"—":Math.round(prob)+"%")+'</b></div><div class="lr-metric"><span>雨量</span><b>'+(rain===null||rain===undefined?"—":Number(rain).toFixed(1)+" mm")+'</b></div></div>';
  }).join("");
- status.textContent="ECMWF EC46｜36 km 系集延伸預報｜顯示 "+available+" 天可用逐日資料"+(limit>available?"；其餘日期保留欄位但標示超出預報範圍，不提供推估數值。":"。")+" 降雨機率僅在有可用資料時顯示。";
+ status.textContent="ECMWF EC46｜36 km 系集延伸預報｜本月共 "+dates.length+" 天，其中 "+available+" 天有可用逐日預報；其餘日期標示超出預報範圍，不提供推估數值。降雨機率僅在有來源的日期顯示。";
  seasonal.hidden=true;seasonal.innerHTML="";
 }
 
