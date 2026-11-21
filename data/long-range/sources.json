@@ -84,8 +84,8 @@
       "source_id": "copernicus_c3s_multisystem",
       "display_name": "Copernicus C3S Multi-system Seasonal Forecast",
       "provider": "Copernicus Climate Change Service",
-      "role": "multi_model_seasonal_consensus",
-      "status": "planned_requires_credentials_and_dataset_terms",
+      "role": "optional_cross_validation",
+      "status": "optional_future_integration",
       "endpoint": "https://cds.climate.copernicus.eu/api",
       "models": [
         "ECMWF",
@@ -115,10 +115,11 @@
         "secret_name": "CDS_API_TOKEN"
       },
       "limitations": [
-        "Requires a Copernicus account, API token, and manual acceptance of the terms for each dataset.",
-        "Forecasts must be paired with hindcasts from the same originating system and matching initialization configuration for calibrated probabilities.",
-        "Forecast lead availability differs by originating centre; do not assume all models provide identical dates or lead times.",
-        "C3S tercile probabilities describe below/near/above-normal categories, not probability of rain on a particular day."
+        "非第一階段必要來源；系統不得因未設定 CDS 帳號或 API token 而停止建置、擷取或日期評估。",
+        "若未來啟用，才需建立 Copernicus 帳號、API token，並手動接受所需資料集條款。",
+        "預報必須與相同 originating system 且初始化設定相符的 hindcast 配對，才能進行適當機率校準。",
+        "各預報中心可用 lead time 不同，不得假設所有模式提供相同日期或時間範圍。",
+        "C3S tercile probabilities 描述低於／接近／高於常年的類別機率，不是特定高爾夫日的降雨機率。"
       ],
       "documentation": "https://climate.copernicus.eu/seasonal-forecasts"
     },
