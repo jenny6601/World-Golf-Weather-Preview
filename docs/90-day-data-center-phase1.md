@@ -123,3 +123,25 @@ JSON Schema：`data/schemas/long-range-observation.schema.json`。
 - [ ] 檢查各球場、各模式的成功／部分成功／失敗狀態與資料完整性。
 - [ ] 確認 artifact 僅供預覽、無 repository 寫入、無正式部署。
 - [ ] 再決定長期儲存方式及更新頻率；未完成資料品質驗證前，不啟動日期排名。
+
+
+## 亞洲球場主檔匯入與座標品質標記
+
+已從獨立的 `jenny6601/World-Golf-Weather-PWA` Repository 的 `development` 分支，讀取 `data/courses/asia-courses.json`，匯入本預覽 Repository 的 `data/long-range/courses.asia.json`。匯入為資料副本，不修改來源 Repository。
+
+本次實際解析來源 JSON 的結果為 56 座、8 個國家／地區，全部具備經緯度及 IANA 時區；其中 7 座 `verified`、49 座 `partially_verified`。來源檔內的 `record_count` 為 56，但 `notes` 文字仍記載 44 筆及不同的狀態數字；匯入程序以實際 `courses` 陣列 56 筆為準，並保留來源的逐筆驗證狀態，不以說明文字覆蓋資料列。
+
+匯入範圍包括日本、南韓、中國、越南、泰國、馬來西亞、新加坡及印尼。每筆保留原 course_id、英文名稱、國家代碼、GPS、IANA 時區、verification_status、coordinate_source、官方地址／網站及來源註記。
+
+### 擷取程式調整
+
+- workflow 改用 `data/long-range/courses.asia.json` 作為輸入。
+- 以球場自身 IANA 時區請求資料，並在回應中保存該時區；不以國家代碼推算時區。
+- Open-Meteo Seasonal API 的 `hourly` 參數實際提供原生 6 小時資料，資料標籤固定為 `6-hourly`，不宣稱每小時精度。
+- 每筆快照保留來源球場的驗證狀態；部分核實座標仍標示 `partially_verified`，不升格。
+- EC46 與 SEAS5 分開請求及保存；每座球場預期最多產生兩份模型快照。
+- 原始快照保留供應商回應及有效時間軸；不自行推導降雨機率或日期排名。
+
+### 尚未完成的驗證
+
+目前已完成主檔匯入及 workflow 指向修正，但尚未取得本次 GitHub Actions 的實際執行結果。因此，不能宣稱 56 座球場已成功完成 112 次 API 擷取。下一步需手動執行 workflow，檢查各國球場、EC46／SEAS5 的成功率、API 回傳欄位、時間軸及失敗原因。
