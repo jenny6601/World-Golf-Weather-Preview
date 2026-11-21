@@ -17,7 +17,8 @@ class PipelineTests(unittest.TestCase):
             "course_name": "Test Golf Course",
             "country_code": "JP",
             "latitude": 26.2,
-            "longitude": 127.7
+            "longitude": 127.7,
+            "timezone": "Asia/Tokyo"
         }
 
     def test_rejects_invalid_coordinates(self):
