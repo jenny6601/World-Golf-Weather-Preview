@@ -315,6 +315,13 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
 .long-term-stat strong,.long-term-seasonal-item strong{display:block;font-size:19px;margin-top:4px}
 .long-term-stat small,.long-term-seasonal-item small{color:#64748b;font-size:12px}
 .long-term-seasonal-item{background:#f5f8f2}
+.long-range-rain-table{width:100%;border-collapse:collapse;min-width:520px;font-size:13px}
+.long-range-rain-table th,.long-range-rain-table td{padding:10px 8px;text-align:center;border-bottom:1px solid #e2e8f0;vertical-align:middle}
+.long-range-rain-table th{background:#edf4f8;color:#174f78;font-weight:800}
+.long-range-rain-table td:first-child{font-weight:800;white-space:nowrap}
+.long-range-rain-table .rain-prob{font-size:18px;font-weight:900;color:#1769aa}
+.long-range-rain-table .rain-amount{font-size:17px;font-weight:900;color:#14734a}
+.long-range-rain-table .rain-muted{color:#8492a0;font-size:12px}
 @media(max-width:520px){.long-range-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.long-term-climate-grid,.long-term-seasonal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .mobile-hide-radar{display:none!important}
 </style>
@@ -455,7 +462,14 @@ footer{color:var(--muted);font-size:12px;padding:18px 0}
   <p class="muted long-range-disclaimer">逐日資料為區域尺度系集預報，未經球場微氣候偏差校正；超出EC46範圍的日期不顯示逐日天氣數值。</p>
  </div>
 </section>
-<section class="card" id="longTermObservationPanel">
+<section class="card" id="longRangeRainPanel">
+  <h3 class="forecast-heading">⑥A 第17～90天｜中長期降雨預報</h3>
+  <p class="muted">第17～46天優先使用EC46系集成員計算每週降雨機率與累積雨量；第47～90天使用SEAS5週尺度降水量及偏濕機率。長期資料代表區域趨勢，不等於單日降雨預報。</p>
+  <div id="longRangeRainStatus" class="muted" aria-live="polite">選擇球場後載入第17～90天降雨資料。</div>
+  <div class="tablewrap"><table class="long-range-rain-table"><thead><tr><th>預報期間</th><th>降雨機率／偏濕機率</th><th>累積雨量／週降水量</th><th>資料依據</th></tr></thead><tbody id="longRangeRainRows"><tr><td colspan="4">等待球場資料</td></tr></tbody></table></div>
+  <p class="muted long-range-disclaimer">「降雨機率」僅在取得EC46逐日系集成員時，以每週累積雨量超過1 mm的成員比例計算；SEAS5的「偏濕機率」是降水高於常年的機率，並非下雨機率。未取得的欄位會明確標示，不以推估值補齊。</p>
+ </section>
+ <section class="card" id="longTermObservationPanel">
  <h3 class="forecast-heading">⑦ 長期觀測與氣候趨勢</h3>
  <p class="muted">A｜歷史氣候統計：近十年同月份的平均氣溫與平均日雨量。B｜未來季節趨勢：ECMWF季節系集預報，呈現較常年偏暖／偏冷、偏濕／偏乾。兩者均為月尺度參考，不是逐日預報。</p>
  <div id="longTermObservationStatus" class="muted" aria-live="polite">選擇球場後載入歷史氣候與季節趨勢。</div>
@@ -1728,6 +1742,7 @@ let amountWeights=null,probabilityWeights=null,weightingLabel="等權中位數�
  $("courseAutoStatus").textContent=`${p.name}｜${date}｜座標 ${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}｜${forecastSource}${modelErrors.length?"；部分模型失敗，詳見 API 診斷":""}`;
  loadAndRenderDailyForecast(p);
  loadLongRangeForecast(p);
+ loadLongRangeRain(p,[p.name,p.lat,p.lon,currentCourseTimezone].join("|"));
  loadV28ProviderCache(p.name,date);
  if(!forceRefresh&&cacheAgeMinutes!==null&&cacheAgeMinutes>180&&cacheAgeMinutes<=720&&Object.keys(cachedCourseModels(cacheCandidate,p.name,date)).length){
   $("status").textContent="舊快取已先顯示｜正在背景更新六組即時模型…";
@@ -1788,6 +1803,58 @@ function renderLongRangeForecast(){
  }).join("");
  const available=monthDates.filter(date=>indexByDate.has(date)).length;
  status.textContent=month.year+"年"+month.month+"月｜ECMWF EC46逐日資料涵蓋 "+available+"/"+days+" 天；未涵蓋日期不顯示推估值。";
+}
+let longRangeRainCache=new Map();
+function localDateKey(offset){
+ const zone=currentCourseTimezone||"Asia/Taipei";
+ const parts=new Intl.DateTimeFormat("en-CA",{timeZone:zone,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+ const y=Number(parts.find(x=>x.type==="year").value),m=Number(parts.find(x=>x.type==="month").value),d=Number(parts.find(x=>x.type==="day").value);
+ const date=new Date(Date.UTC(y,m-1,d+offset));
+ return date.getUTCFullYear()+"-"+String(date.getUTCMonth()+1).padStart(2,"0")+"-"+String(date.getUTCDate()).padStart(2,"0");
+}
+async function loadLongRangeRain(course,key){
+ const status=$("longRangeRainStatus"),tbody=$("longRangeRainRows");if(!status||!tbody)return;
+ if(longRangeRainCache.has(key)){renderLongRangeRain(longRangeRainCache.get(key));return;}
+ status.textContent="正在取得EC46系集與SEAS5週尺度降雨資料…";tbody.innerHTML='<tr><td colspan="4">資料載入中…</td></tr>';
+ try{
+  const base={latitude:String(course.lat),longitude:String(course.lon),timezone:currentCourseTimezone||"Asia/Taipei",forecast_days:"90",models:"ecmwf_seasonal_seamless"};
+  const dailyQ=new URLSearchParams({...base,daily:"precipitation_sum"});
+  const weeklyQ=new URLSearchParams({...base,weekly:"precipitation_mean,precipitation_anomaly,precipitation_anomaly_gt0,precipitation_anomaly_gt10,precipitation_anomaly_gt20,precipitation_efi"});
+  const [dailyResp,weeklyResp]=await Promise.all([
+   fetchWithRetry("https://seasonal-api.open-meteo.com/v1/forecast?"+dailyQ.toString(),{},"EC46/SEAS5逐日系集降雨",25000),
+   fetchWithRetry("https://seasonal-api.open-meteo.com/v1/forecast?"+weeklyQ.toString(),{},"SEAS5週尺度降雨趨勢",25000)
+  ]);
+  const [dailyData,weeklyData]=await Promise.all([dailyResp.json(),weeklyResp.json()]);
+  const record={daily:dailyData.daily||{},weekly:weeklyData.weekly||{}};
+  longRangeRainCache.set(key,record);renderLongRangeRain(record);
+ }catch(e){status.textContent="中長期降雨資料載入失敗："+(e.message||String(e));tbody.innerHTML='<tr><td colspan="4">目前無法取得資料，請稍後重試。</td></tr>';}
+}
+function renderLongRangeRain(record){
+ const status=$("longRangeRainStatus"),tbody=$("longRangeRainRows");if(!status||!tbody)return;
+ const daily=record.daily||{},weekly=record.weekly||{},times=daily.time||[];
+ const memberKeys=Object.keys(daily).filter(k=>/^precipitation_sum_member_?\d+$/i.test(k));
+ const rows=[];
+ if(memberKeys.length&&times.length){
+  for(let offset=16;offset<46;offset+=7){
+   const from=localDateKey(offset),to=localDateKey(Math.min(offset+6,45));
+   const indices=times.map((date,i)=>date>=from&&date<=to?i:-1).filter(i=>i>=0);
+   if(!indices.length)continue;
+   const totals=memberKeys.map(k=>indices.reduce((sum,i)=>sum+(Number(daily[k]?.[i])||0),0));
+   const wet=totals.filter(v=>v>1).length,prob=totals.length?Math.round(wet/totals.length*100):null;
+   const mean=totals.length?totals.reduce((a,b)=>a+b,0)/totals.length:null;
+   rows.push({period:from.slice(5).replace("-","/")+"–"+to.slice(5).replace("-","/"),prob,amount:mean,source:"EC46｜"+totals.length+"系集成員",kind:"ec46"});
+  }
+ }
+ const wtime=weekly.time||[];
+ for(let i=0;i<wtime.length;i++){
+  const date=typeof wtime[i]==="number"?new Date(wtime[i]*1000).toISOString().slice(0,10):String(wtime[i]).slice(0,10);
+  if(date<localDateKey(46)||date>localDateKey(90))continue;
+  const amount=weekly.precipitation_mean?.[i],wetProb=weekly.precipitation_anomaly_gt0?.[i];
+  rows.push({period:date.slice(5).replace("-","/")+" 起（週）",prob:Number.isFinite(Number(wetProb))?Math.round(Number(wetProb)*100):null,amount:Number.isFinite(Number(amount))?Number(amount):null,source:"SEAS5｜偏濕機率",kind:"seas5"});
+ }
+ rows.sort((a,b)=>a.period.localeCompare(b.period));
+ tbody.innerHTML=rows.length?rows.map(r=>'<tr><td>'+r.period+'</td><td>'+(r.prob===null?'<span class="rain-muted">未提供</span>':'<span class="rain-prob">'+r.prob+'%</span>')+(r.kind==="seas5"?'<div class="rain-muted">高於常年降水機率</div>':'<div class="rain-muted">週累積雨量＞1 mm</div>')+'</td><td>'+(r.amount===null?'<span class="rain-muted">未提供</span>':'<span class="rain-amount">'+r.amount.toFixed(1)+' mm</span>')+'</td><td>'+r.source+'</td></tr>').join(""):'<tr><td colspan="4">目前API未回傳可用的週尺度降雨資料。</td></tr>';
+ status.textContent="第17～90天降雨資料整理完成；EC46系集週降雨機率與SEAS5偏濕機率分開標示。";
 }
 async function loadLongTermObservation(course,key){
  const status=$("longTermObservationStatus"),stats=$("longTermClimateStats"),seasonal=$("longTermSeasonal");
