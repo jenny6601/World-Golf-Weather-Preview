@@ -9,7 +9,7 @@
       "provider": "Open-Meteo / ECMWF",
       "role": "primary_extended_range",
       "status": "available_without_user_key",
-      "endpoint": "https://seasonal-api.open-meteo.com/v1/forecast",
+      "endpoint": "https://seasonal-api.open-meteo.com/v1/seasonal",
       "models": [
         "ecmwf_ec46",
         "ecmwf_ec46_ensemble_mean"
@@ -49,7 +49,7 @@
       "provider": "Open-Meteo / ECMWF",
       "role": "primary_seasonal",
       "status": "available_without_user_key",
-      "endpoint": "https://seasonal-api.open-meteo.com/v1/forecast",
+      "endpoint": "https://seasonal-api.open-meteo.com/v1/seasonal",
       "models": [
         "ecmwf_seas5",
         "ecmwf_seas5_ensemble_mean",
